@@ -1,0 +1,26 @@
+module eth_mac_tb;
+
+
+eth_mac(
+	rst_n			,
+	tx_go			,
+	data_len		,
+	des_mac		,
+	src_mac		,	
+	crc_res		,
+	len_type		,
+	
+	fifo_rq		,
+	fifo_ck		,
+	fifo_da		,
+	
+	/*mii 接口*/
+	mii_tx_clk	,
+	mii_tx_en	,
+	mii_tx_er	,
+	mii_tx_da	,
+	);
+
+
+
+endmodule

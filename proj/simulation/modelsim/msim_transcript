@@ -1,0 +1,60 @@
+# Reading D:/major_soft/soft/quartus13/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do eth_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\major_soft\soft\quartus13\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\major_soft\soft\quartus13\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/rtl {L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module eth_mac
+# 
+# Top level modules:
+# 	eth_mac
+# vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/rtl {L:/FPWG_WORK/FPGA_100ETH/rtl/eth.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module eth
+# 
+# Top level modules:
+# 	eth
+# 
+# vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../tb {L:/FPWG_WORK/FPGA_100ETH/proj/../tb/eth_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module eth_tb
+# 
+# Top level modules:
+# 	eth_tb
+# vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl {L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth_mac.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module eth_mac
+# 
+# Top level modules:
+# 	eth_mac
+# vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl {L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module eth
+# 
+# Top level modules:
+# 	eth
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  eth_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps eth_tb 
+# Loading work.eth_tb
+# Loading work.eth
+# Loading work.eth_mac
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module eth_tb at L:/FPWG_WORK/FPGA_100ETH/proj/../tb/eth_tb.v line 37
+# Simulation Breakpoint: Break in Module eth_tb at L:/FPWG_WORK/FPGA_100ETH/proj/../tb/eth_tb.v line 37
+# MACRO ./eth_run_msim_rtl_verilog.do PAUSED at line 20

@@ -1,0 +1,16 @@
+To				,Location
+mii_rx_clk		,PIN_A13
+mii_rx_da[3]	,PIN_B13
+mii_rx_da[2]	,PIN_A14
+mii_rx_da[1]	,PIN_B14
+mii_rx_da[0]	,PIN_E10
+mii_rx_dv		,PIN_A15
+mii_rx_er		,PIN_F11
+mii_tx_clk		,PIN_D11
+mii_tx_da[3]	,PIN_B11
+mii_tx_da[2]	,PIN_A12
+mii_tx_da[1]	,PIN_B12
+mii_tx_da[0]	,PIN_C11
+mii_tx_en		,PIN_C14
+phy_rst_n		,PIN_D14
+rst_n			,PIN_E16

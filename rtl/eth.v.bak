@@ -1,0 +1,43 @@
+module eth(
+	rst_n			,
+	
+	
+	mii_tx_clk	,
+	mii_tx_en	,
+	mii_tx_er	,
+	mii_tx_da	,
+	
+	mii_rx_clk	,
+	mii_rx_dv	,
+	mii_rx_er	,
+	mii_rx_da	,
+	
+	phy_rst_n
+	);
+	
+	
+	
+	input rst_n;
+	
+	//MII 接口信号	
+	input mii_tx_clk;	//MII接口发送时钟，由PHY芯片产生，25MHz
+	output mii_tx_en;	//MII接口发送数据使能信号，高电平有效
+	output mii_tx_er;	//发送错误，用以破坏数据包发送
+	output [3:0]mii_tx_da; //MII接口发送数据线，FPGA通过该数据线将需要发送的数据依次送给PHY芯片
+	output phy_rst_n;	// PHY 复位信号
+
+	input mii_rx_clk;	//MII接口接收时钟，由PHY芯片产生，25MHz
+	input mii_rx_dv;	//MII接口接收数据有效信号，高电平有效
+	input mii_rx_er;	//接收错误，本实例中暂时忽略该信号
+	input [3:0]mii_rx_da;	//MII接口数据总线，FPGA通过该数据线读取PHY芯片接收到的以太网数据
+	
+	
+	
+	
+
+
+endmodule
+
+
+
+	
