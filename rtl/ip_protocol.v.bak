@@ -1,0 +1,62 @@
+module ip_protocol(
+		rst_n		,
+		clk		,
+		tx_go			,
+		data_len		,
+		
+		fifo_rq		,
+		fifo_ck		,
+		fifo_da		,
+		
+		
+		mii_tx_clk	,
+		mii_tx_en	,
+		mii_tx_er	,
+		mii_tx_da			
+		
+	);
+	
+	input rst_n			;
+	input	clk			;
+	input	tx_go			;
+	input[10:0]	data_len	;
+
+	input fifo_rq		;
+	output fifo_ck		;
+	input[4:0] fifo_da;	
+	
+	input mii_tx_clk	;
+	input mii_tx_en	;
+	input mii_tx_er	;
+	input [3:0]mii_tx_da	;	
+	
+	
+	reg [5:0]cnt
+	
+	eth_mac u0(
+			.rst_n		(rst_n			),
+			.tx_go		(tx_go			),
+			.data_len	(data_len		),
+			.des_mac		(des_mac		),
+			.src_mac		(src_mac		),	
+			.crc_res		(crc_res		),
+			.crc_en		(crc_en		),
+			.len_type	(len_type	),
+			
+			.fifo_rq		(fifo_rq		),
+			.fifo_ck		(fifo_ck		),
+			.fifo_da		(fifo_da		),
+			.mii_tx_clk	(mii_tx_clk	),
+			.mii_tx_en	(mii_tx_en	),
+			.mii_tx_er	(mii_tx_er	),
+			.mii_tx_da	(mii_tx_da	)
+	);
+	
+	
+	
+	
+	
+	
+	
+	
+endmodule

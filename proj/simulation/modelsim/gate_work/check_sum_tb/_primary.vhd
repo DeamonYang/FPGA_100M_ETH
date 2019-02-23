@@ -1,4 +1,4 @@
 library verilog;
 use verilog.vl_types.all;
-entity eth_tb is
-end eth_tb;
+entity check_sum_tb is
+end check_sum_tb;

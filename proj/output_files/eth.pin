@@ -157,7 +157,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F10       :        :                   :         : 7         :                
+mii_tx_er                    : F10       : output : 2.5 V             :         : 7         : N              
 mii_rx_er                    : F11       : input  : 2.5 V             :         : 7         : Y              
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F13       :        :                   :         : 6         :                
@@ -317,7 +317,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : T6        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T8        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T9        :        :                   :         : 4         :                
-mii_tx_er                    : T10       : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T13       :        :                   :         : 4         :                

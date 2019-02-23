@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dL:\FPWG_WORK\FPGA_100ETH\proj\simulation\modelsim
+vcheck_sum
+!i10b 1
+!s100 Y0_Uk<;G7hz[Hj16GYZP]0
+I1BnRXH8?Sd3IPj>^kcRL?3
+VTJFbP>6`Q?]JSbb8TR^Yk2
+Z1 dL:\FPWG_WORK\FPGA_100ETH\proj\simulation\modelsim
+w1550823367
+8L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/check_sum.v
+FL:/FPWG_WORK/FPGA_100ETH/proj/../rtl/check_sum.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1550824007.537000
+!s107 L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/check_sum.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/check_sum.v|
+!s101 -O0
+Z3 o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0
+vcheck_sum_tb
+I_noAbYm[f=nYf8zYCIE<^3
+VS1UmFe59DHPH:kFj>YG[01
+R1
+w1550823835
+8L:/FPWG_WORK/FPGA_100ETH/proj/../tb/check_sum_tb.v
+FL:/FPWG_WORK/FPGA_100ETH/proj/../tb/check_sum_tb.v
+L0 2
+R2
+r1
+31
+R3
+!i10b 1
+!s100 _Z1PMQhfke<ZR<gQCof`62
+!s85 0
+!s108 1550824007.393000
+!s107 L:/FPWG_WORK/FPGA_100ETH/proj/../tb/check_sum_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../tb|L:/FPWG_WORK/FPGA_100ETH/proj/../tb/check_sum_tb.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../tb -O0

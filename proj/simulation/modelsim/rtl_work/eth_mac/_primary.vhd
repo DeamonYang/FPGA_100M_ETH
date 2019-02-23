@@ -4,10 +4,11 @@ entity eth_mac is
     port(
         rst_n           : in     vl_logic;
         tx_go           : in     vl_logic;
-        data_len        : in     vl_logic_vector(10 downto 0);
+        data_len        : in     vl_logic_vector(11 downto 0);
         des_mac         : in     vl_logic_vector(47 downto 0);
         src_mac         : in     vl_logic_vector(47 downto 0);
         crc_res         : in     vl_logic_vector(31 downto 0);
+        crc_en          : out    vl_logic;
         len_type        : in     vl_logic_vector(15 downto 0);
         fifo_rq         : out    vl_logic;
         fifo_ck         : out    vl_logic;

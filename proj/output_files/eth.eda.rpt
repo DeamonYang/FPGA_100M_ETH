@@ -1,5 +1,5 @@
 EDA Netlist Writer report for eth
-Fri Feb 22 14:58:04 2019
+Sat Feb 23 10:35:38 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -36,9 +36,9 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Feb 22 14:58:04 2019 ;
+; EDA Netlist Writer Status ; Successful - Sat Feb 23 10:35:38 2019 ;
 ; Revision Name             ; eth                                   ;
-; Top-level Entity Name     ; eth                                   ;
+; Top-level Entity Name     ; ip_proto_test                         ;
 ; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -88,7 +88,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Fri Feb 22 14:58:03 2019
+    Info: Processing started: Sat Feb 23 10:35:37 2019
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off eth -c eth
 Info (204019): Generated file eth_8_1200mv_85c_slow.vo in folder "L:/FPWG_WORK/FPGA_100ETH/proj/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file eth_8_1200mv_0c_slow.vo in folder "L:/FPWG_WORK/FPGA_100ETH/proj/simulation/modelsim/" for EDA simulation tool
@@ -99,8 +99,8 @@ Info (204019): Generated file eth_8_1200mv_0c_v_slow.sdo in folder "L:/FPWG_WORK
 Info (204019): Generated file eth_min_1200mv_0c_v_fast.sdo in folder "L:/FPWG_WORK/FPGA_100ETH/proj/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file eth_v.sdo in folder "L:/FPWG_WORK/FPGA_100ETH/proj/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4550 megabytes
-    Info: Processing ended: Fri Feb 22 14:58:04 2019
+    Info: Peak virtual memory: 4561 megabytes
+    Info: Processing ended: Sat Feb 23 10:35:38 2019
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

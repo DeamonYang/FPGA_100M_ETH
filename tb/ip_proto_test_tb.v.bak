@@ -1,0 +1,21 @@
+`timescale 1ns/1ns
+module ip_proto_test_tb;
+
+	ip_proto_test(
+	rst_n			,
+
+	mii_tx_clk	,
+	mii_tx_en	,
+	mii_tx_er	,
+	mii_tx_da	,
+	
+	mii_rx_clk	,
+	mii_rx_dv	,
+	mii_rx_er	,
+	mii_rx_da	,
+	
+	phy_rst_n
+	);
+
+
+endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for eth
-Fri Feb 22 14:57:53 2019
+Sat Feb 23 10:35:26 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -15,12 +15,17 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |eth
- 12. Port Connectivity Checks: "eth_mac:mac_lay"
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |ip_proto_test
+ 13. Parameter Settings for User Entity Instance: ip_protocol:ui|crc32_d4:crc_u1
+ 14. Port Connectivity Checks: "ip_protocol:ui|check_sum:cksum_u7"
+ 15. Port Connectivity Checks: "ip_protocol:ui|eth_mac:u0"
+ 16. Port Connectivity Checks: "ip_protocol:ui|crc32_d4:crc_u1"
+ 17. Port Connectivity Checks: "ip_protocol:ui"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -46,15 +51,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb 22 14:57:53 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Feb 23 10:35:26 2019       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; eth                                         ;
-; Top-level Entity Name              ; eth                                         ;
+; Top-level Entity Name              ; ip_proto_test                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 177                                         ;
-;     Total combinational functions  ; 177                                         ;
-;     Dedicated logic registers      ; 64                                          ;
-; Total registers                    ; 64                                          ;
+; Total logic elements               ; 297                                         ;
+;     Total combinational functions  ; 269                                         ;
+;     Dedicated logic registers      ; 150                                         ;
+; Total registers                    ; 150                                         ;
 ; Total pins                         ; 16                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -69,7 +74,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE10F17C8       ;                    ;
-; Top-level entity name                                                      ; eth                ; eth                ;
+; Top-level entity name                                                      ; ip_proto_test      ; eth                ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -167,14 +172,17 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path           ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------+---------+
-; ../rtl/eth_mac.v                 ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v ;         ;
-; ../rtl/eth.v                     ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/eth.v     ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                               ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
+; ../rtl/ip_proto_test.v           ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/ip_proto_test.v ;         ;
+; ../rtl/ip_protocol.v             ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v   ;         ;
+; ../rtl/crc32_d4.v                ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/crc32_d4.v      ;         ;
+; ../rtl/eth_mac.v                 ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v       ;         ;
+; ../rtl/check_sum.v               ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v     ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
 
 
 +----------------------------------------------------------------+
@@ -182,133 +190,101 @@ applicable agreement for further details.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 177              ;
+; Estimated Total logic elements              ; 297              ;
 ;                                             ;                  ;
-; Total combinational functions               ; 177              ;
+; Total combinational functions               ; 269              ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 97               ;
-;     -- 3 input functions                    ; 22               ;
-;     -- <=2 input functions                  ; 58               ;
+;     -- 4 input functions                    ; 152              ;
+;     -- 3 input functions                    ; 34               ;
+;     -- <=2 input functions                  ; 83               ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 130              ;
-;     -- arithmetic mode                      ; 47               ;
+;     -- normal mode                          ; 204              ;
+;     -- arithmetic mode                      ; 65               ;
 ;                                             ;                  ;
-; Total registers                             ; 64               ;
-;     -- Dedicated logic registers            ; 64               ;
+; Total registers                             ; 150              ;
+;     -- Dedicated logic registers            ; 150              ;
 ;     -- I/O registers                        ; 0                ;
 ;                                             ;                  ;
 ; I/O pins                                    ; 16               ;
 ; Embedded Multiplier 9-bit elements          ; 0                ;
 ; Maximum fan-out node                        ; mii_tx_clk~input ;
-; Maximum fan-out                             ; 64               ;
-; Total fan-out                               ; 822              ;
-; Average fan-out                             ; 3.01             ;
+; Maximum fan-out                             ; 150              ;
+; Total fan-out                               ; 1490             ;
+; Average fan-out                             ; 3.30             ;
 +---------------------------------------------+------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                          ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
-; |eth                       ; 177 (109)         ; 64 (39)      ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |eth                 ;              ;
-;    |eth_mac:mac_lay|       ; 68 (68)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eth|eth_mac:mac_lay ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                   ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
+; |ip_proto_test             ; 269 (76)          ; 150 (39)     ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |ip_proto_test                                ;              ;
+;    |ip_protocol:ui|        ; 193 (60)          ; 111 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ip_proto_test|ip_protocol:ui                 ;              ;
+;       |crc32_d4:crc_u1|    ; 47 (47)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ip_proto_test|ip_protocol:ui|crc32_d4:crc_u1 ;              ;
+;       |eth_mac:u0|         ; 86 (86)           ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ip_proto_test|ip_protocol:ui|eth_mac:u0      ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                           ;
-+-----------------------------------------------------------------+--------------------------------------------+
-; Register name                                                   ; Reason for Removal                         ;
-+-----------------------------------------------------------------+--------------------------------------------+
-; eth_mac:mac_lay|r_src_mac[0..5,8,17..23,25,27,30..32,34,36..47] ; Stuck at GND due to stuck port data_in     ;
-; eth_mac:mac_lay|r_crc_res[1..3,6,8..10,12,21,23..29,31]         ; Stuck at GND due to stuck port data_in     ;
-; eth_mac:mac_lay|r_len_type[0,3..10,12..15]                      ; Stuck at GND due to stuck port data_in     ;
-; eth_mac:mac_lay|r_len_type[1]                                   ; Merged with eth_mac:mac_lay|r_len_type[2]  ;
-; eth_mac:mac_lay|r_len_type[2]                                   ; Merged with eth_mac:mac_lay|r_len_type[11] ;
-; eth_mac:mac_lay|r_len_type[11]                                  ; Merged with eth_mac:mac_lay|r_crc_res[0]   ;
-; eth_mac:mac_lay|r_crc_res[0]                                    ; Merged with eth_mac:mac_lay|r_crc_res[4]   ;
-; eth_mac:mac_lay|r_crc_res[4]                                    ; Merged with eth_mac:mac_lay|r_crc_res[5]   ;
-; eth_mac:mac_lay|r_crc_res[5]                                    ; Merged with eth_mac:mac_lay|r_crc_res[7]   ;
-; eth_mac:mac_lay|r_crc_res[7]                                    ; Merged with eth_mac:mac_lay|r_crc_res[11]  ;
-; eth_mac:mac_lay|r_crc_res[11]                                   ; Merged with eth_mac:mac_lay|r_crc_res[13]  ;
-; eth_mac:mac_lay|r_crc_res[13]                                   ; Merged with eth_mac:mac_lay|r_crc_res[14]  ;
-; eth_mac:mac_lay|r_crc_res[14]                                   ; Merged with eth_mac:mac_lay|r_crc_res[15]  ;
-; eth_mac:mac_lay|r_crc_res[15]                                   ; Merged with eth_mac:mac_lay|r_crc_res[16]  ;
-; eth_mac:mac_lay|r_crc_res[16]                                   ; Merged with eth_mac:mac_lay|r_crc_res[17]  ;
-; eth_mac:mac_lay|r_crc_res[17]                                   ; Merged with eth_mac:mac_lay|r_crc_res[18]  ;
-; eth_mac:mac_lay|r_crc_res[18]                                   ; Merged with eth_mac:mac_lay|r_crc_res[19]  ;
-; eth_mac:mac_lay|r_crc_res[19]                                   ; Merged with eth_mac:mac_lay|r_crc_res[20]  ;
-; eth_mac:mac_lay|r_crc_res[20]                                   ; Merged with eth_mac:mac_lay|r_crc_res[22]  ;
-; eth_mac:mac_lay|r_crc_res[22]                                   ; Merged with eth_mac:mac_lay|r_crc_res[30]  ;
-; eth_mac:mac_lay|r_crc_res[30]                                   ; Merged with eth_mac:mac_lay|r_src_mac[6]   ;
-; eth_mac:mac_lay|r_src_mac[6]                                    ; Merged with eth_mac:mac_lay|r_src_mac[7]   ;
-; eth_mac:mac_lay|r_src_mac[7]                                    ; Merged with eth_mac:mac_lay|r_src_mac[9]   ;
-; eth_mac:mac_lay|r_src_mac[9]                                    ; Merged with eth_mac:mac_lay|r_src_mac[10]  ;
-; eth_mac:mac_lay|r_src_mac[10]                                   ; Merged with eth_mac:mac_lay|r_src_mac[11]  ;
-; eth_mac:mac_lay|r_src_mac[11]                                   ; Merged with eth_mac:mac_lay|r_src_mac[12]  ;
-; eth_mac:mac_lay|r_src_mac[12]                                   ; Merged with eth_mac:mac_lay|r_src_mac[13]  ;
-; eth_mac:mac_lay|r_src_mac[13]                                   ; Merged with eth_mac:mac_lay|r_src_mac[14]  ;
-; eth_mac:mac_lay|r_src_mac[14]                                   ; Merged with eth_mac:mac_lay|r_src_mac[15]  ;
-; eth_mac:mac_lay|r_src_mac[15]                                   ; Merged with eth_mac:mac_lay|r_src_mac[16]  ;
-; eth_mac:mac_lay|r_src_mac[16]                                   ; Merged with eth_mac:mac_lay|r_src_mac[24]  ;
-; eth_mac:mac_lay|r_src_mac[24]                                   ; Merged with eth_mac:mac_lay|r_src_mac[26]  ;
-; eth_mac:mac_lay|r_src_mac[26]                                   ; Merged with eth_mac:mac_lay|r_src_mac[28]  ;
-; eth_mac:mac_lay|r_src_mac[28]                                   ; Merged with eth_mac:mac_lay|r_src_mac[29]  ;
-; eth_mac:mac_lay|r_src_mac[29]                                   ; Merged with eth_mac:mac_lay|r_src_mac[33]  ;
-; eth_mac:mac_lay|r_src_mac[33]                                   ; Merged with eth_mac:mac_lay|r_src_mac[35]  ;
-; eth_mac:mac_lay|r_src_mac[35]                                   ; Merged with eth_mac:mac_lay|r_des_mac[0]   ;
-; eth_mac:mac_lay|r_des_mac[0]                                    ; Merged with eth_mac:mac_lay|r_des_mac[1]   ;
-; eth_mac:mac_lay|r_des_mac[1]                                    ; Merged with eth_mac:mac_lay|r_des_mac[2]   ;
-; eth_mac:mac_lay|r_des_mac[2]                                    ; Merged with eth_mac:mac_lay|r_des_mac[3]   ;
-; eth_mac:mac_lay|r_des_mac[3]                                    ; Merged with eth_mac:mac_lay|r_des_mac[4]   ;
-; eth_mac:mac_lay|r_des_mac[4]                                    ; Merged with eth_mac:mac_lay|r_des_mac[5]   ;
-; eth_mac:mac_lay|r_des_mac[5]                                    ; Merged with eth_mac:mac_lay|r_des_mac[6]   ;
-; eth_mac:mac_lay|r_des_mac[6]                                    ; Merged with eth_mac:mac_lay|r_des_mac[7]   ;
-; eth_mac:mac_lay|r_des_mac[7]                                    ; Merged with eth_mac:mac_lay|r_des_mac[8]   ;
-; eth_mac:mac_lay|r_des_mac[8]                                    ; Merged with eth_mac:mac_lay|r_des_mac[9]   ;
-; eth_mac:mac_lay|r_des_mac[9]                                    ; Merged with eth_mac:mac_lay|r_des_mac[10]  ;
-; eth_mac:mac_lay|r_des_mac[10]                                   ; Merged with eth_mac:mac_lay|r_des_mac[11]  ;
-; eth_mac:mac_lay|r_des_mac[11]                                   ; Merged with eth_mac:mac_lay|r_des_mac[12]  ;
-; eth_mac:mac_lay|r_des_mac[12]                                   ; Merged with eth_mac:mac_lay|r_des_mac[13]  ;
-; eth_mac:mac_lay|r_des_mac[13]                                   ; Merged with eth_mac:mac_lay|r_des_mac[14]  ;
-; eth_mac:mac_lay|r_des_mac[14]                                   ; Merged with eth_mac:mac_lay|r_des_mac[15]  ;
-; eth_mac:mac_lay|r_des_mac[15]                                   ; Merged with eth_mac:mac_lay|r_des_mac[16]  ;
-; eth_mac:mac_lay|r_des_mac[16]                                   ; Merged with eth_mac:mac_lay|r_des_mac[17]  ;
-; eth_mac:mac_lay|r_des_mac[17]                                   ; Merged with eth_mac:mac_lay|r_des_mac[18]  ;
-; eth_mac:mac_lay|r_des_mac[18]                                   ; Merged with eth_mac:mac_lay|r_des_mac[19]  ;
-; eth_mac:mac_lay|r_des_mac[19]                                   ; Merged with eth_mac:mac_lay|r_des_mac[20]  ;
-; eth_mac:mac_lay|r_des_mac[20]                                   ; Merged with eth_mac:mac_lay|r_des_mac[21]  ;
-; eth_mac:mac_lay|r_des_mac[21]                                   ; Merged with eth_mac:mac_lay|r_des_mac[22]  ;
-; eth_mac:mac_lay|r_des_mac[22]                                   ; Merged with eth_mac:mac_lay|r_des_mac[23]  ;
-; eth_mac:mac_lay|r_des_mac[23]                                   ; Merged with eth_mac:mac_lay|r_des_mac[24]  ;
-; eth_mac:mac_lay|r_des_mac[24]                                   ; Merged with eth_mac:mac_lay|r_des_mac[25]  ;
-; eth_mac:mac_lay|r_des_mac[25]                                   ; Merged with eth_mac:mac_lay|r_des_mac[26]  ;
-; eth_mac:mac_lay|r_des_mac[26]                                   ; Merged with eth_mac:mac_lay|r_des_mac[27]  ;
-; eth_mac:mac_lay|r_des_mac[27]                                   ; Merged with eth_mac:mac_lay|r_des_mac[28]  ;
-; eth_mac:mac_lay|r_des_mac[28]                                   ; Merged with eth_mac:mac_lay|r_des_mac[29]  ;
-; eth_mac:mac_lay|r_des_mac[29]                                   ; Merged with eth_mac:mac_lay|r_des_mac[30]  ;
-; eth_mac:mac_lay|r_des_mac[30]                                   ; Merged with eth_mac:mac_lay|r_des_mac[31]  ;
-; eth_mac:mac_lay|r_des_mac[31]                                   ; Merged with eth_mac:mac_lay|r_des_mac[32]  ;
-; eth_mac:mac_lay|r_des_mac[32]                                   ; Merged with eth_mac:mac_lay|r_des_mac[33]  ;
-; eth_mac:mac_lay|r_des_mac[33]                                   ; Merged with eth_mac:mac_lay|r_des_mac[34]  ;
-; eth_mac:mac_lay|r_des_mac[34]                                   ; Merged with eth_mac:mac_lay|r_des_mac[35]  ;
-; eth_mac:mac_lay|r_des_mac[35]                                   ; Merged with eth_mac:mac_lay|r_des_mac[36]  ;
-; eth_mac:mac_lay|r_des_mac[36]                                   ; Merged with eth_mac:mac_lay|r_des_mac[37]  ;
-; eth_mac:mac_lay|r_des_mac[37]                                   ; Merged with eth_mac:mac_lay|r_des_mac[38]  ;
-; eth_mac:mac_lay|r_des_mac[38]                                   ; Merged with eth_mac:mac_lay|r_des_mac[39]  ;
-; eth_mac:mac_lay|r_des_mac[39]                                   ; Merged with eth_mac:mac_lay|r_des_mac[40]  ;
-; eth_mac:mac_lay|r_des_mac[40]                                   ; Merged with eth_mac:mac_lay|r_des_mac[41]  ;
-; eth_mac:mac_lay|r_des_mac[41]                                   ; Merged with eth_mac:mac_lay|r_des_mac[42]  ;
-; eth_mac:mac_lay|r_des_mac[42]                                   ; Merged with eth_mac:mac_lay|r_des_mac[43]  ;
-; eth_mac:mac_lay|r_des_mac[43]                                   ; Merged with eth_mac:mac_lay|r_des_mac[44]  ;
-; eth_mac:mac_lay|r_des_mac[44]                                   ; Merged with eth_mac:mac_lay|r_des_mac[45]  ;
-; eth_mac:mac_lay|r_des_mac[45]                                   ; Merged with eth_mac:mac_lay|r_des_mac[46]  ;
-; eth_mac:mac_lay|r_des_mac[46]                                   ; Merged with eth_mac:mac_lay|r_des_mac[47]  ;
-; Total Number of Removed Registers = 143                         ;                                            ;
-+-----------------------------------------------------------------+--------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                           ;
++----------------------------------------------------------------------------------------+-----------------------------------------------------+
+; Register name                                                                          ; Reason for Removal                                  ;
++----------------------------------------------------------------------------------------+-----------------------------------------------------+
+; ip_protocol:ui|eth_mac:u0|r_des_mac[2,4,5,11,17..19,21,22,26,28,29,32,36,40..42,45,46] ; Stuck at GND due to stuck port data_in              ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[0..5,8,17..23,25,27,30..32,34,36..47]              ; Stuck at GND due to stuck port data_in              ;
+; ip_protocol:ui|eth_mac:u0|r_len_type[0..14]                                            ; Stuck at GND due to stuck port data_in              ;
+; ip_protocol:ui|eth_mac:u0|r_len_type[15]                                               ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[6]  ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[6]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[7]  ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[7]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[9]  ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[9]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[10] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[10]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[11] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[11]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[12] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[12]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[13] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[13]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[14] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[14]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[15] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[15]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[16] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[16]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[24] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[24]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[26] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[26]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[28] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[28]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[29] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[29]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[33] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[33]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[35] ;
+; ip_protocol:ui|eth_mac:u0|r_src_mac[35]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[0]  ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[0]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[1]  ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[1]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[3]  ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[3]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[6]  ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[6]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[7]  ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[7]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[8]  ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[8]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[9]  ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[9]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[10] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[10]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[12] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[12]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[13] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[13]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[14] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[14]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[15] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[15]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[16] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[16]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[20] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[20]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[23] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[23]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[24] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[24]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[25] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[25]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[27] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[27]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[30] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[30]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[31] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[31]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[33] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[33]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[34] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[34]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[35] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[35]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[37] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[37]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[38] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[38]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[39] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[39]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[43] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[43]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[44] ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[44]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[47] ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[25]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_crc_res[29] ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[24]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_crc_res[28] ;
+; Total Number of Removed Registers = 113                                                ;                                                     ;
++----------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -316,82 +292,234 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 64    ;
+; Total registers                              ; 150   ;
 ; Number of registers using Synchronous Clear  ; 17    ;
-; Number of registers using Synchronous Load   ; 11    ;
-; Number of registers using Asynchronous Clear ; 64    ;
+; Number of registers using Synchronous Load   ; 24    ;
+; Number of registers using Asynchronous Clear ; 150   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 11    ;
+; Number of registers using Clock Enable       ; 92    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |eth|eth_mac:mac_lay|r_data_num[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[27]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[3]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[7]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[19]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[15]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[23]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[11]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[18]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[14]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[22]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[10]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[2]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[6]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[26]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[25]  ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[31]  ; 4       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[1]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[5]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[13]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[17]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[21]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[9]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[16]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[12]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[20]  ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[8]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[0]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[4]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[24]  ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[30]  ; 4       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[29]  ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[28]  ; 5       ;
+; Total number of inverted registers = 32 ;         ;
++-----------------------------------------+---------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |eth ;
-+----------------+----------------------------------+-----------------+
-; Parameter Name ; Value                            ; Type            ;
-+----------------+----------------------------------+-----------------+
-; CRC            ; 10110001111010000101111101000000 ; Unsigned Binary ;
-+----------------+----------------------------------+-----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ip_proto_test|ip_protocol:ui|eth_mac:u0|r_data_num[5] ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ip_proto_test|ip_protocol:ui|data_cnt[0]              ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ip_proto_test|ip_protocol:ui|cnt[5]                   ;
+; 128:1              ; 4 bits    ; 340 LEs       ; 96 LEs               ; 244 LEs                ; Yes        ; |ip_proto_test|ip_protocol:ui|mac_data[0]              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ip_proto_test|ip_protocol:ui|crc32_d4:crc_u1|Crc[30]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ip_proto_test ;
++----------------+----------------------------------+---------------------------+
+; Parameter Name ; Value                            ; Type                      ;
++----------------+----------------------------------+---------------------------+
+; CRC            ; 10110001111010000101111101000000 ; Unsigned Binary           ;
++----------------+----------------------------------+---------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "eth_mac:mac_lay"                                                                                ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                             ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; data_len[4..2]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; data_len[10..7]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data_len[1..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data_len[6]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; data_len[5]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; des_mac          ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; src_mac[29..28]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; src_mac[16..9]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; src_mac[7..6]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; src_mac[47..36]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; src_mac[32..30]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; src_mac[23..17]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; src_mac[5..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; src_mac[35]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; src_mac[34]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; src_mac[33]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; src_mac[27]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; src_mac[26]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; src_mac[25]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; src_mac[24]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; src_mac[8]       ; Input  ; Info     ; Stuck at GND                                                                        ;
-; crc_res[20..13]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; crc_res[5..4]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; crc_res[29..23]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; crc_res[10..8]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; crc_res[3..1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; crc_res[31]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; crc_res[30]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; crc_res[22]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; crc_res[21]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; crc_res[12]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; crc_res[11]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; crc_res[7]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; crc_res[6]       ; Input  ; Info     ; Stuck at GND                                                                        ;
-; crc_res[0]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; len_type[2..1]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; len_type[15..12] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; len_type[10..3]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; len_type[11]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; len_type[0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; fifo_ck          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ip_protocol:ui|crc32_d4:crc_u1 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; Tp             ; 1     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ip_protocol:ui|check_sum:cksum_u7"                                                                                                                                                            ;
++-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ver             ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; ver[1..0]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; ver[3]          ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; ver[2]          ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; hdr_len         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; hdr_len[3]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; hdr_len[2]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; hdr_len[1]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; hdr_len[0]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tos             ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; tos[7..0]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tot_len[15..13] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; id[8..7]        ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; id[5..4]        ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; id[1..0]        ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; id[15..14]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; id[12..9]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; id[3..2]        ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; id[13]          ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; id[6]           ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; offset          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; offset[15..0]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; ttl             ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; ttl[5..0]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; ttl[7]          ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; ttl[6]          ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; protocol        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; protocol[7..5]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; protocol[3..1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; protocol[4]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; protocol[0]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[31..30]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[4..3]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[29..24]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; src_ip[18..16]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; src_ip[14..12]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; src_ip[10..9]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; src_ip[2..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; src_ip[23]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[22]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; src_ip[21]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[20]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; src_ip[19]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[15]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[11]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[8]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[7]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; src_ip[6]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; src_ip[5]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; dst_ip[31..30]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; dst_ip[29..24]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; dst_ip[18..16]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; dst_ip[14..12]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; dst_ip[10..9]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; dst_ip[7..1]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; dst_ip[23]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; dst_ip[22]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; dst_ip[21]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; dst_ip[20]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; dst_ip[19]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; dst_ip[15]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; dst_ip[11]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; dst_ip[8]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; dst_ip[0]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ip_protocol:ui|eth_mac:u0"                                                                                                                                                                    ;
++-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                                                            ;
++-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_len        ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (12 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data_len[0]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[44..43] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[39..37] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[35..33] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[31..30] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[25..23] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[16..12] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[10..6]  ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[1..0]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[46..45] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[42..40] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[29..28] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[22..21] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[19..17] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[5..4]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[47]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[36]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[32]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[27]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[26]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[20]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[11]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; des_mac[3]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; des_mac[2]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; src_mac[29..28] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; src_mac[16..9]  ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; src_mac[7..6]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; src_mac[47..36] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; src_mac[32..30] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; src_mac[23..17] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; src_mac[5..0]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; src_mac[35]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; src_mac[34]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; src_mac[33]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; src_mac[27]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; src_mac[26]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; src_mac[25]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; src_mac[24]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; src_mac[8]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; len_type[14..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; len_type[15]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; fifo_ck         ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "ip_protocol:ui|crc32_d4:crc_u1" ;
++----------+--------+----------+-----------------------------+
+; Port     ; Type   ; Severity ; Details                     ;
++----------+--------+----------+-----------------------------+
+; Crc      ; Output ; Info     ; Explicitly unconnected      ;
+; CrcError ; Output ; Info     ; Explicitly unconnected      ;
++----------+--------+----------+-----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ip_protocol:ui"                                                                                                                                            ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                         ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_len[4..2]  ; Input  ; Info     ; Stuck at VCC                                                                                                                                    ;
+; data_len[11..5] ; Input  ; Info     ; Stuck at GND                                                                                                                                    ;
+; data_len[1..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                    ;
+; fifo_ck         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; fifo_da         ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "fifo_da[4..4]" will be connected to GND. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -399,7 +527,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -409,9 +537,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Fri Feb 22 14:57:51 2019
+    Info: Processing started: Sat Feb 23 10:35:24 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off eth -c eth
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/ip_proto_test.v
+    Info (12023): Found entity 1: ip_proto_test
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/ip_protocol.v
+    Info (12023): Found entity 1: ip_protocol
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/crc32_d4.v
+    Info (12023): Found entity 1: crc32_d4
 Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/eth_mac.v
     Info (12023): Found entity 1: eth_mac
 Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/eth.v
@@ -420,11 +554,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_w
     Info (12023): Found entity 1: eth_mac_tb
 Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/tb/eth_tb.v
     Info (12023): Found entity 1: eth_tb
-Warning (10236): Verilog HDL Implicit Net warning at eth.v(48): created implicit net for "tx_go"
-Info (12127): Elaborating entity "eth" for the top level hierarchy
-Info (12128): Elaborating entity "eth_mac" for hierarchy "eth_mac:mac_lay"
-Warning (10036): Verilog HDL or VHDL warning at eth_mac.v(40): object "r_data_len" assigned a value but never read
-Warning (10034): Output port "mii_tx_er" at eth_mac.v(35) has no driver
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/check_sum.v
+    Info (12023): Found entity 1: check_sum
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/tb/check_sum_tb.v
+    Info (12023): Found entity 1: check_sum_tb
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/tb/ip_protocol_tb.v
+    Info (12023): Found entity 1: ip_protocol_tb
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/tb/ip_proto_test_tb.v
+    Info (12023): Found entity 1: ip_proto_test_tb
+Warning (10236): Verilog HDL Implicit Net warning at ip_proto_test.v(50): created implicit net for "tx_go"
+Warning (10236): Verilog HDL Implicit Net warning at eth.v(64): created implicit net for "tx_go"
+Info (12127): Elaborating entity "ip_proto_test" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at ip_proto_test.v(36): object "crc_result" assigned a value but never read
+Info (12128): Elaborating entity "ip_protocol" for hierarchy "ip_protocol:ui"
+Warning (10230): Verilog HDL assignment warning at ip_protocol.v(45): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at ip_protocol.v(49): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at ip_protocol.v(171): truncated value with size 5 to match size of target (4)
+Info (12128): Elaborating entity "crc32_d4" for hierarchy "ip_protocol:ui|crc32_d4:crc_u1"
+Info (12128): Elaborating entity "eth_mac" for hierarchy "ip_protocol:ui|eth_mac:u0"
+Warning (10036): Verilog HDL or VHDL warning at eth_mac.v(43): object "r_data_len" assigned a value but never read
+Warning (10034): Output port "mii_tx_er" at eth_mac.v(38) has no driver
+Info (12128): Elaborating entity "check_sum" for hierarchy "ip_protocol:ui|check_sum:cksum_u7"
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "mii_tx_er" is stuck at GND
     Warning (13410): Pin "phy_rst_n" is stuck at VCC
@@ -440,13 +593,13 @@ Warning (21074): Design contains 7 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "mii_rx_da[1]"
     Warning (15610): No output dependent on input pin "mii_rx_da[2]"
     Warning (15610): No output dependent on input pin "mii_rx_da[3]"
-Info (21057): Implemented 193 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 313 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 177 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info (21061): Implemented 297 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 20 warnings
     Info: Peak virtual memory: 4640 megabytes
-    Info: Processing ended: Fri Feb 22 14:57:53 2019
+    Info: Processing ended: Sat Feb 23 10:35:26 2019
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

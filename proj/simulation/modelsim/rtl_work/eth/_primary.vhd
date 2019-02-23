@@ -2,7 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity eth is
     generic(
-        CRC             : integer := 2125313752
+        CRC             : vl_logic_vector(31 downto 0) := (Hi1, Hi0, Hi1, Hi1, Hi0, Hi0, Hi0, Hi1, Hi1, Hi1, Hi1, Hi0, Hi1, Hi0, Hi0, Hi0, Hi0, Hi1, Hi0, Hi1, Hi1, Hi1, Hi1, Hi1, Hi0, Hi1, Hi0, Hi0, Hi0, Hi0, Hi0, Hi0)
     );
     port(
         rst_n           : in     vl_logic;

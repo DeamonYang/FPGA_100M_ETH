@@ -3,7 +3,7 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'mii_tx_clk'
-Slack : 32.082
+Slack : 33.787
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'mii_tx_clk'
@@ -11,11 +11,11 @@ Slack : 0.485
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'mii_tx_clk'
-Slack : 19.646
+Slack : 19.644
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'mii_tx_clk'
-Slack : 32.529
+Slack : 34.119
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'mii_tx_clk'
@@ -23,11 +23,11 @@ Slack : 0.430
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'mii_tx_clk'
-Slack : 19.538
+Slack : 19.536
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'mii_tx_clk'
-Slack : 36.601
+Slack : 37.310
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'mii_tx_clk'
@@ -35,7 +35,7 @@ Slack : 0.201
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'mii_tx_clk'
-Slack : 19.361
+Slack : 19.379
 TNS   : 0.000
 
 ------------------------------------------------------------

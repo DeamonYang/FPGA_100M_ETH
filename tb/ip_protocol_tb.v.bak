@@ -1,0 +1,23 @@
+module ip_protocol_tb;
+
+
+ip_protocol(
+		rst_n		,
+		clk		,
+		tx_go			,
+		data_len		,
+		
+		fifo_rq		,
+		fifo_ck		,
+		fifo_da		,
+		
+		
+		mii_tx_clk	,
+		mii_tx_en	,
+		mii_tx_er	,
+		mii_tx_da			
+		
+	);
+
+
+endmodule

@@ -3,63 +3,143 @@ K3
 13
 cModel Technology
 Z0 dL:\FPWG_WORK\FPGA_100ETH\proj\simulation\modelsim
-veth
-!i10b 1
-!s100 8f@CE0_mJ6Pn^IzSIQlzg1
-Ig0V]M>1FB4^b_FW4ZiTF>2
-VPlA3_NNA8b<V=>X]iUe4c0
+vcheck_sum
+I<iF]>2704jdb0OWe3igJQ2
+VTJFbP>6`Q?]JSbb8TR^Yk2
 Z1 dL:\FPWG_WORK\FPGA_100ETH\proj\simulation\modelsim
-w1550802842
-8L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth.v
-FL:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth.v
+w1550845232
+8L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v
+FL:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v
 L0 1
 Z2 OV;L;10.1d;51
 r1
-!s85 0
 31
-!s108 1550803001.029000
-!s107 L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth.v|
-!s101 -O0
 Z3 o-vlog01compat -work work -O0
 Z4 !s92 -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0
-veth_mac
-IEBzUA?hjE]GHVgPG3;fON2
-Vb>Igce=[cY3k[]SK>6?;c2
+!i10b 1
+!s100 @@?g@L4aK1`kS>9jMdo]=0
+!s85 0
+!s108 1550845253.188000
+!s107 L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|-O0|L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v|
+!s101 -O0
+vcrc32_d4
+I2lZ@IWe51GI6L0_^PAEBK0
+VFzgCc5P[Cn@1Kd6Aj;FbI1
 R1
-w1550801673
-8L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth_mac.v
-FL:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth_mac.v
+w1493611062
+8L:/FPWG_WORK/FPGA_100ETH/rtl/crc32_d4.v
+FL:/FPWG_WORK/FPGA_100ETH/rtl/crc32_d4.v
+L0 2
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 gRKAc<BB7H^?gNQin1Nn^2
+!s85 0
+!s108 1550845253.355000
+!s107 L:/FPWG_WORK/FPGA_100ETH/rtl/crc32_d4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|-O0|L:/FPWG_WORK/FPGA_100ETH/rtl/crc32_d4.v|
+!s101 -O0
+veth
+IG=QbL?lZOl::Difl7NY7^0
+V;KT[]b7PDLiV8N;;NdWTk2
+R1
+w1550826397
+8L:/FPWG_WORK/FPGA_100ETH/rtl/eth.v
+FL:/FPWG_WORK/FPGA_100ETH/rtl/eth.v
 L0 1
 R2
 r1
 31
 R3
-!i10b 1
-!s100 gSBNc_`a_]zYjaWJG`]V@3
-!s85 0
-!s108 1550803000.909000
-!s107 L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth_mac.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|L:/FPWG_WORK/FPGA_100ETH/proj/../rtl/eth_mac.v|
-!s101 -O0
 R4
-veth_tb
-ILH9HF1U8MVOMg[18UBVWQ3
-V`]DXA[mHP0UCZA@oVXMI13
+!i10b 1
+!s100 _C>De?Qd8^Mz9eH<YOiHW2
+!s85 0
+!s108 1550845253.533000
+!s107 L:/FPWG_WORK/FPGA_100ETH/rtl/eth.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|-O0|L:/FPWG_WORK/FPGA_100ETH/rtl/eth.v|
+!s101 -O0
+veth_mac
+IV=S>^gOjda;>dEdVcc6fV1
+V:5VG<JFhU:z30^:bolJjH3
 R1
-w1550802793
-8L:/FPWG_WORK/FPGA_100ETH/proj/../tb/eth_tb.v
-FL:/FPWG_WORK/FPGA_100ETH/proj/../tb/eth_tb.v
+w1550841298
+8L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v
+FL:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 hkem?UcQMJ65C@jbgF:c61
+!s85 0
+!s108 1550845253.700000
+!s107 L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|-O0|L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v|
+!s101 -O0
+vip_proto_test
+I@>KQOem53boh353b]]CWj0
+VB;[E0@4T38KAF6KEU034^2
+R1
+w1550844062
+8L:/FPWG_WORK/FPGA_100ETH/rtl/ip_proto_test.v
+FL:/FPWG_WORK/FPGA_100ETH/rtl/ip_proto_test.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 5FVCVWeZL>G?@UB16N4zX3
+!s85 0
+!s108 1550845253.855000
+!s107 L:/FPWG_WORK/FPGA_100ETH/rtl/ip_proto_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|-O0|L:/FPWG_WORK/FPGA_100ETH/rtl/ip_proto_test.v|
+!s101 -O0
+vip_proto_test_tb
+I<mooFORLm0PSbPoX>oBRb3
+VCzi[EH;kb7cUAXjm2Lc[Y0
+R1
+w1550843674
+8L:/FPWG_WORK/FPGA_100ETH/tb/ip_proto_test_tb.v
+FL:/FPWG_WORK/FPGA_100ETH/tb/ip_proto_test_tb.v
 L0 2
 R2
 r1
 31
 R3
 !i10b 1
-!s100 7OjX3_lUoEW;M`G8AlOc>3
+!s100 oFB^H3UFNh=SGk62LG^KC0
 !s85 0
-!s108 1550803000.775000
-!s107 L:/FPWG_WORK/FPGA_100ETH/proj/../tb/eth_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../tb|L:/FPWG_WORK/FPGA_100ETH/proj/../tb/eth_tb.v|
+!s108 1550845254.001000
+!s107 L:/FPWG_WORK/FPGA_100ETH/tb/ip_proto_test_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../tb|-O0|L:/FPWG_WORK/FPGA_100ETH/tb/ip_proto_test_tb.v|
 !s101 -O0
 !s92 -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../tb -O0
+vip_protocol
+!i10b 1
+!s100 W^bIZIibic1]<Ycl=2APl0
+IAoFgeh6SPA9bOX=:IY::J3
+V0L5b93Y_^0jG3@LWMn9oP0
+R1
+w1550844721
+8L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v
+FL:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1550845254.150000
+!s107 L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl|-O0|L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v|
+!s101 -O0
+R3
+R4

@@ -1,5 +1,5 @@
 Fitter report for eth
-Fri Feb 22 14:57:57 2019
+Sat Feb 23 10:35:31 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -68,17 +68,17 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Feb 22 14:57:57 2019       ;
+; Fitter Status                      ; Successful - Sat Feb 23 10:35:31 2019       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; eth                                         ;
-; Top-level Entity Name              ; eth                                         ;
+; Top-level Entity Name              ; ip_proto_test                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10F17C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 177 / 10,320 ( 2 % )                        ;
-;     Total combinational functions  ; 177 / 10,320 ( 2 % )                        ;
-;     Dedicated logic registers      ; 64 / 10,320 ( < 1 % )                       ;
-; Total registers                    ; 64                                          ;
+; Total logic elements               ; 281 / 10,320 ( 3 % )                        ;
+;     Total combinational functions  ; 269 / 10,320 ( 3 % )                        ;
+;     Dedicated logic registers      ; 150 / 10,320 ( 1 % )                        ;
+; Total registers                    ; 150                                         ;
 ; Total pins                         ; 16 / 180 ( 9 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                         ;
@@ -186,8 +186,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 284 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 284 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 462 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 462 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -210,7 +210,7 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 274     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 452     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 10      ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -221,125 +221,125 @@ applicable agreement for further details.
 The pin-out file can be found in L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.pin.
 
 
-+---------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                       ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Total logic elements                        ; 177 / 10,320 ( 2 % )  ;
-;     -- Combinational with no register       ; 113                   ;
-;     -- Register only                        ; 0                     ;
-;     -- Combinational with a register        ; 64                    ;
-;                                             ;                       ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 97                    ;
-;     -- 3 input functions                    ; 22                    ;
-;     -- <=2 input functions                  ; 58                    ;
-;     -- Register only                        ; 0                     ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 130                   ;
-;     -- arithmetic mode                      ; 47                    ;
-;                                             ;                       ;
-; Total registers*                            ; 64 / 11,172 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 64 / 10,320 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 852 ( 0 % )       ;
-;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 12 / 645 ( 2 % )      ;
-; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 16 / 180 ( 9 % )      ;
-;     -- Clock pins                           ; 1 / 3 ( 33 % )        ;
-;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )         ;
-;                                             ;                       ;
-; Global signals                              ; 1                     ;
-; M9Ks                                        ; 0 / 46 ( 0 % )        ;
-; Total block memory bits                     ; 0 / 423,936 ( 0 % )   ;
-; Total block memory implementation bits      ; 0 / 423,936 ( 0 % )   ;
-; Embedded Multiplier 9-bit elements          ; 0 / 46 ( 0 % )        ;
-; PLLs                                        ; 0 / 2 ( 0 % )         ;
-; Global clocks                               ; 1 / 10 ( 10 % )       ;
-; JTAGs                                       ; 0 / 1 ( 0 % )         ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
-; Impedance control blocks                    ; 0 / 4 ( 0 % )         ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%          ;
-; Maximum fan-out                             ; 64                    ;
-; Highest non-global fan-out                  ; 64                    ;
-; Total fan-out                               ; 828                   ;
-; Average fan-out                             ; 2.92                  ;
-+---------------------------------------------+-----------------------+
++--------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                      ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Total logic elements                        ; 281 / 10,320 ( 3 % ) ;
+;     -- Combinational with no register       ; 131                  ;
+;     -- Register only                        ; 12                   ;
+;     -- Combinational with a register        ; 138                  ;
+;                                             ;                      ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 152                  ;
+;     -- 3 input functions                    ; 34                   ;
+;     -- <=2 input functions                  ; 83                   ;
+;     -- Register only                        ; 12                   ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 204                  ;
+;     -- arithmetic mode                      ; 65                   ;
+;                                             ;                      ;
+; Total registers*                            ; 150 / 11,172 ( 1 % ) ;
+;     -- Dedicated logic registers            ; 150 / 10,320 ( 1 % ) ;
+;     -- I/O registers                        ; 0 / 852 ( 0 % )      ;
+;                                             ;                      ;
+; Total LABs:  partially or completely used   ; 20 / 645 ( 3 % )     ;
+; Virtual pins                                ; 0                    ;
+; I/O pins                                    ; 16 / 180 ( 9 % )     ;
+;     -- Clock pins                           ; 1 / 3 ( 33 % )       ;
+;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )        ;
+;                                             ;                      ;
+; Global signals                              ; 1                    ;
+; M9Ks                                        ; 0 / 46 ( 0 % )       ;
+; Total block memory bits                     ; 0 / 423,936 ( 0 % )  ;
+; Total block memory implementation bits      ; 0 / 423,936 ( 0 % )  ;
+; Embedded Multiplier 9-bit elements          ; 0 / 46 ( 0 % )       ;
+; PLLs                                        ; 0 / 2 ( 0 % )        ;
+; Global clocks                               ; 1 / 10 ( 10 % )      ;
+; JTAGs                                       ; 0 / 1 ( 0 % )        ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )        ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )        ;
+; Impedance control blocks                    ; 0 / 4 ( 0 % )        ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%         ;
+; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%         ;
+; Maximum fan-out                             ; 150                  ;
+; Highest non-global fan-out                  ; 150                  ;
+; Total fan-out                               ; 1507                 ;
+; Average fan-out                             ; 3.19                 ;
++---------------------------------------------+----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                         ;
-+---------------------------------------------+----------------------+--------------------------------+
-; Statistic                                   ; Top                  ; hard_block:auto_generated_inst ;
-+---------------------------------------------+----------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                  ; Low                            ;
-;                                             ;                      ;                                ;
-; Total logic elements                        ; 177 / 10320 ( 2 % )  ; 0 / 10320 ( 0 % )              ;
-;     -- Combinational with no register       ; 113                  ; 0                              ;
-;     -- Register only                        ; 0                    ; 0                              ;
-;     -- Combinational with a register        ; 64                   ; 0                              ;
-;                                             ;                      ;                                ;
-; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 97                   ; 0                              ;
-;     -- 3 input functions                    ; 22                   ; 0                              ;
-;     -- <=2 input functions                  ; 58                   ; 0                              ;
-;     -- Register only                        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 130                  ; 0                              ;
-;     -- arithmetic mode                      ; 47                   ; 0                              ;
-;                                             ;                      ;                                ;
-; Total registers                             ; 64                   ; 0                              ;
-;     -- Dedicated logic registers            ; 64 / 10320 ( < 1 % ) ; 0 / 10320 ( 0 % )              ;
-;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 12 / 645 ( 2 % )     ; 0 / 645 ( 0 % )                ;
-;                                             ;                      ;                                ;
-; Virtual pins                                ; 0                    ; 0                              ;
-; I/O pins                                    ; 16                   ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 46 ( 0 % )       ; 0 / 46 ( 0 % )                 ;
-; Total memory bits                           ; 0                    ; 0                              ;
-; Total RAM block bits                        ; 0                    ; 0                              ;
-; Clock control block                         ; 1 / 12 ( 8 % )       ; 0 / 12 ( 0 % )                 ;
-;                                             ;                      ;                                ;
-; Connections                                 ;                      ;                                ;
-;     -- Input Connections                    ; 0                    ; 0                              ;
-;     -- Registered Input Connections         ; 0                    ; 0                              ;
-;     -- Output Connections                   ; 0                    ; 0                              ;
-;     -- Registered Output Connections        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 823                  ; 5                              ;
-;     -- Registered Connections               ; 358                  ; 0                              ;
-;                                             ;                      ;                                ;
-; External Connections                        ;                      ;                                ;
-;     -- Top                                  ; 0                    ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Partition Interface                         ;                      ;                                ;
-;     -- Input Ports                          ; 9                    ; 0                              ;
-;     -- Output Ports                         ; 7                    ; 0                              ;
-;     -- Bidir Ports                          ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Registered Ports                            ;                      ;                                ;
-;     -- Registered Input Ports               ; 0                    ; 0                              ;
-;     -- Registered Output Ports              ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Port Connectivity                           ;                      ;                                ;
-;     -- Input Ports driven by GND            ; 0                    ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                    ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                    ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                    ; 0                              ;
-;     -- Input Ports with no Source           ; 0                    ; 0                              ;
-;     -- Output Ports with no Source          ; 0                    ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                    ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                    ; 0                              ;
-+---------------------------------------------+----------------------+--------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                        ;
++---------------------------------------------+---------------------+--------------------------------+
+; Statistic                                   ; Top                 ; hard_block:auto_generated_inst ;
++---------------------------------------------+---------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                 ; Low                            ;
+;                                             ;                     ;                                ;
+; Total logic elements                        ; 281 / 10320 ( 3 % ) ; 0 / 10320 ( 0 % )              ;
+;     -- Combinational with no register       ; 131                 ; 0                              ;
+;     -- Register only                        ; 12                  ; 0                              ;
+;     -- Combinational with a register        ; 138                 ; 0                              ;
+;                                             ;                     ;                                ;
+; Logic element usage by number of LUT inputs ;                     ;                                ;
+;     -- 4 input functions                    ; 152                 ; 0                              ;
+;     -- 3 input functions                    ; 34                  ; 0                              ;
+;     -- <=2 input functions                  ; 83                  ; 0                              ;
+;     -- Register only                        ; 12                  ; 0                              ;
+;                                             ;                     ;                                ;
+; Logic elements by mode                      ;                     ;                                ;
+;     -- normal mode                          ; 204                 ; 0                              ;
+;     -- arithmetic mode                      ; 65                  ; 0                              ;
+;                                             ;                     ;                                ;
+; Total registers                             ; 150                 ; 0                              ;
+;     -- Dedicated logic registers            ; 150 / 10320 ( 1 % ) ; 0 / 10320 ( 0 % )              ;
+;                                             ;                     ;                                ;
+; Total LABs:  partially or completely used   ; 20 / 645 ( 3 % )    ; 0 / 645 ( 0 % )                ;
+;                                             ;                     ;                                ;
+; Virtual pins                                ; 0                   ; 0                              ;
+; I/O pins                                    ; 16                  ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 46 ( 0 % )      ; 0 / 46 ( 0 % )                 ;
+; Total memory bits                           ; 0                   ; 0                              ;
+; Total RAM block bits                        ; 0                   ; 0                              ;
+; Clock control block                         ; 1 / 12 ( 8 % )      ; 0 / 12 ( 0 % )                 ;
+;                                             ;                     ;                                ;
+; Connections                                 ;                     ;                                ;
+;     -- Input Connections                    ; 0                   ; 0                              ;
+;     -- Registered Input Connections         ; 0                   ; 0                              ;
+;     -- Output Connections                   ; 0                   ; 0                              ;
+;     -- Registered Output Connections        ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Internal Connections                        ;                     ;                                ;
+;     -- Total Connections                    ; 1502                ; 5                              ;
+;     -- Registered Connections               ; 620                 ; 0                              ;
+;                                             ;                     ;                                ;
+; External Connections                        ;                     ;                                ;
+;     -- Top                                  ; 0                   ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Partition Interface                         ;                     ;                                ;
+;     -- Input Ports                          ; 9                   ; 0                              ;
+;     -- Output Ports                         ; 7                   ; 0                              ;
+;     -- Bidir Ports                          ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Registered Ports                            ;                     ;                                ;
+;     -- Registered Input Ports               ; 0                   ; 0                              ;
+;     -- Registered Output Ports              ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Port Connectivity                           ;                     ;                                ;
+;     -- Input Ports driven by GND            ; 0                   ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                   ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                   ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                   ; 0                              ;
+;     -- Input Ports with no Source           ; 0                   ; 0                              ;
+;     -- Output Ports with no Source          ; 0                   ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                   ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                   ; 0                              ;
++---------------------------------------------+---------------------+--------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -354,8 +354,8 @@ The pin-out file can be found in L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.
 ; mii_rx_da[3] ; B13   ; 7        ; 30           ; 24           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; mii_rx_dv    ; A15   ; 7        ; 21           ; 24           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; mii_rx_er    ; F11   ; 7        ; 23           ; 24           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; mii_tx_clk   ; D11   ; 7        ; 32           ; 24           ; 21           ; 64                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; rst_n        ; E16   ; 6        ; 34           ; 12           ; 7            ; 64                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; mii_tx_clk   ; D11   ; 7        ; 32           ; 24           ; 21           ; 150                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; rst_n        ; E16   ; 6        ; 34           ; 12           ; 7            ; 150                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 
 
@@ -369,7 +369,7 @@ The pin-out file can be found in L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.
 ; mii_tx_da[2] ; A12   ; 7        ; 25           ; 24           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; mii_tx_da[3] ; B11   ; 7        ; 25           ; 24           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; mii_tx_en    ; C14   ; 7        ; 32           ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; mii_tx_er    ; T10   ; 4        ; 21           ; 0            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; mii_tx_er    ; F10   ; 7        ; 23           ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; phy_rst_n    ; D14   ; 7        ; 32           ; 24           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
@@ -403,10 +403,10 @@ The pin-out file can be found in L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.
 ; 1        ; 4 / 17 ( 24 % )  ; 2.5V          ; --           ;
 ; 2        ; 0 / 19 ( 0 % )   ; 2.5V          ; --           ;
 ; 3        ; 0 / 26 ( 0 % )   ; 2.5V          ; --           ;
-; 4        ; 1 / 27 ( 4 % )   ; 2.5V          ; --           ;
+; 4        ; 0 / 27 ( 0 % )   ; 2.5V          ; --           ;
 ; 5        ; 0 / 25 ( 0 % )   ; 2.5V          ; --           ;
 ; 6        ; 2 / 14 ( 14 % )  ; 2.5V          ; --           ;
-; 7        ; 14 / 26 ( 54 % ) ; 2.5V          ; --           ;
+; 7        ; 15 / 26 ( 58 % ) ; 2.5V          ; --           ;
 ; 8        ; 0 / 26 ( 0 % )   ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -505,7 +505,7 @@ The pin-out file can be found in L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.
 ; F7       ; 186        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F8       ; 182        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F9       ; 165        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; F10      ; 164        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; F10      ; 164        ; 7        ; mii_tx_er                                                 ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; F11      ; 166        ; 7        ; mii_rx_er                                                 ; input  ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; F12      ;            ; --       ; VCCA2                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; F13      ; 138        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -666,7 +666,7 @@ The pin-out file can be found in L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.
 ; T7       ; 67         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T8       ; 73         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T9       ; 75         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; T10      ; 81         ; 4        ; mii_tx_er                                                 ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; T10      ; 81         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T11      ; 84         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T12      ; 86         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T13      ; 92         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -677,14 +677,16 @@ The pin-out file can be found in L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                            ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name  ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------+--------------+
-; |eth                       ; 177 (109)   ; 64 (39)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 16   ; 0            ; 113 (70)     ; 0 (0)             ; 64 (39)          ; |eth                 ;              ;
-;    |eth_mac:mac_lay|       ; 68 (68)     ; 25 (25)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 43 (43)      ; 0 (0)             ; 25 (25)          ; |eth|eth_mac:mac_lay ;              ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                     ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                           ; Library Name ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------+--------------+
+; |ip_proto_test             ; 281 (76)    ; 150 (39)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 16   ; 0            ; 131 (37)     ; 12 (0)            ; 138 (39)         ; |ip_proto_test                                ;              ;
+;    |ip_protocol:ui|        ; 205 (60)    ; 111 (23)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 94 (37)      ; 12 (0)            ; 99 (23)          ; |ip_proto_test|ip_protocol:ui                 ;              ;
+;       |crc32_d4:crc_u1|    ; 47 (47)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 34 (34)          ; |ip_proto_test|ip_protocol:ui|crc32_d4:crc_u1 ;              ;
+;       |eth_mac:u0|         ; 100 (100)   ; 56 (56)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 44 (44)      ; 12 (12)           ; 44 (44)          ; |ip_proto_test|ip_protocol:ui|eth_mac:u0      ;              ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -707,104 +709,195 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; mii_rx_da[2] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; mii_rx_da[3] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; phy_rst_n    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; mii_tx_clk   ; Input    ; (0) 0 ps      ; (0) 0 ps      ; --                    ; --  ; --   ;
+; mii_tx_clk   ; Input    ; (0) 0 ps      ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; rst_n        ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 +--------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+---------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                      ;
-+---------------------------------------+-------------------+---------+
-; Source Pin / Fanout                   ; Pad To Core Index ; Setting ;
-+---------------------------------------+-------------------+---------+
-; mii_rx_clk                            ;                   ;         ;
-; mii_rx_dv                             ;                   ;         ;
-; mii_rx_er                             ;                   ;         ;
-; mii_rx_da[0]                          ;                   ;         ;
-; mii_rx_da[1]                          ;                   ;         ;
-; mii_rx_da[2]                          ;                   ;         ;
-; mii_rx_da[3]                          ;                   ;         ;
-; mii_tx_clk                            ;                   ;         ;
-;      - eth_mac:mac_lay|mii_tx_en      ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|mii_tx_da[0]   ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|mii_tx_da[1]   ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|mii_tx_da[2]   ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|mii_tx_da[3]   ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|sta_cnt[0]     ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|sta_cnt[1]     ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|sta_cnt[2]     ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|sta_cnt[3]     ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|sta_cnt[4]     ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|sta_cnt[5]     ; 1                 ; 0       ;
-;      - cnt[1]                         ; 1                 ; 0       ;
-;      - cnt[2]                         ; 1                 ; 0       ;
-;      - cnt[3]                         ; 1                 ; 0       ;
-;      - cnt[4]                         ; 1                 ; 0       ;
-;      - cnt[5]                         ; 1                 ; 0       ;
-;      - cnt[6]                         ; 1                 ; 0       ;
-;      - cnt[7]                         ; 1                 ; 0       ;
-;      - cnt[8]                         ; 1                 ; 0       ;
-;      - cnt[9]                         ; 1                 ; 0       ;
-;      - cnt[10]                        ; 1                 ; 0       ;
-;      - cnt[11]                        ; 1                 ; 0       ;
-;      - cnt[12]                        ; 1                 ; 0       ;
-;      - cnt[13]                        ; 1                 ; 0       ;
-;      - cnt[14]                        ; 1                 ; 0       ;
-;      - cnt[15]                        ; 1                 ; 0       ;
-;      - cnt[16]                        ; 1                 ; 0       ;
-;      - cnt[17]                        ; 1                 ; 0       ;
-;      - cnt[18]                        ; 1                 ; 0       ;
-;      - cnt[19]                        ; 1                 ; 0       ;
-;      - cnt[20]                        ; 1                 ; 0       ;
-;      - cnt[21]                        ; 1                 ; 0       ;
-;      - cnt[22]                        ; 1                 ; 0       ;
-;      - cnt[23]                        ; 1                 ; 0       ;
-;      - data_cnt[0]                    ; 1                 ; 0       ;
-;      - data_cnt[1]                    ; 1                 ; 0       ;
-;      - data_cnt[2]                    ; 1                 ; 0       ;
-;      - data_cnt[3]                    ; 1                 ; 0       ;
-;      - data_cnt[4]                    ; 1                 ; 0       ;
-;      - data_cnt[5]                    ; 1                 ; 0       ;
-;      - data_cnt[6]                    ; 1                 ; 0       ;
-;      - data_cnt[7]                    ; 1                 ; 0       ;
-;      - data_cnt[8]                    ; 1                 ; 0       ;
-;      - data_cnt[9]                    ; 1                 ; 0       ;
-;      - data_cnt[10]                   ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[0]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[1]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[2]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[3]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[4]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[5]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[6]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[7]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[8]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[9]  ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_data_num[10] ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|r_des_mac[47]  ; 1                 ; 0       ;
-;      - fifo_da[0]                     ; 0                 ; 0       ;
-;      - fifo_da[1]                     ; 0                 ; 0       ;
-;      - fifo_da[2]                     ; 0                 ; 0       ;
-;      - fifo_da[3]                     ; 0                 ; 0       ;
-;      - eth_mac:mac_lay|send_data_en   ; 1                 ; 0       ;
-;      - eth_mac:mac_lay|r_tx_en        ; 1                 ; 0       ;
-;      - cnt[0]                         ; 1                 ; 0       ;
-; rst_n                                 ;                   ;         ;
-+---------------------------------------+-------------------+---------+
++-------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                ;
++-------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                             ; Pad To Core Index ; Setting ;
++-------------------------------------------------+-------------------+---------+
+; mii_rx_clk                                      ;                   ;         ;
+; mii_rx_dv                                       ;                   ;         ;
+; mii_rx_er                                       ;                   ;         ;
+; mii_rx_da[0]                                    ;                   ;         ;
+; mii_rx_da[1]                                    ;                   ;         ;
+; mii_rx_da[2]                                    ;                   ;         ;
+; mii_rx_da[3]                                    ;                   ;         ;
+; mii_tx_clk                                      ;                   ;         ;
+;      - ip_protocol:ui|eth_mac:u0|mii_tx_en      ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|mii_tx_da[0]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|mii_tx_da[1]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|mii_tx_da[2]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|mii_tx_da[3]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|sta_cnt[0]     ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|sta_cnt[1]     ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|sta_cnt[2]     ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|sta_cnt[3]     ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|sta_cnt[4]     ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|sta_cnt[5]     ; 0                 ; 0       ;
+;      - cnt[1]                                   ; 0                 ; 0       ;
+;      - cnt[2]                                   ; 0                 ; 0       ;
+;      - cnt[3]                                   ; 0                 ; 0       ;
+;      - cnt[4]                                   ; 0                 ; 0       ;
+;      - cnt[5]                                   ; 0                 ; 0       ;
+;      - cnt[6]                                   ; 0                 ; 0       ;
+;      - cnt[7]                                   ; 0                 ; 0       ;
+;      - cnt[8]                                   ; 0                 ; 0       ;
+;      - cnt[9]                                   ; 0                 ; 0       ;
+;      - cnt[10]                                  ; 0                 ; 0       ;
+;      - cnt[11]                                  ; 0                 ; 0       ;
+;      - cnt[12]                                  ; 0                 ; 0       ;
+;      - cnt[13]                                  ; 0                 ; 0       ;
+;      - cnt[14]                                  ; 0                 ; 0       ;
+;      - cnt[15]                                  ; 0                 ; 0       ;
+;      - cnt[16]                                  ; 0                 ; 0       ;
+;      - cnt[17]                                  ; 0                 ; 0       ;
+;      - cnt[18]                                  ; 0                 ; 0       ;
+;      - cnt[19]                                  ; 0                 ; 0       ;
+;      - cnt[20]                                  ; 0                 ; 0       ;
+;      - cnt[21]                                  ; 0                 ; 0       ;
+;      - cnt[22]                                  ; 0                 ; 0       ;
+;      - cnt[23]                                  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[0]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[1]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[2]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[3]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[4]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[5]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[6]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[7]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[8]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[9]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[10] ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_data_num[11] ; 0                 ; 0       ;
+;      - data_cnt[0]                              ; 0                 ; 0       ;
+;      - data_cnt[1]                              ; 0                 ; 0       ;
+;      - data_cnt[2]                              ; 0                 ; 0       ;
+;      - data_cnt[3]                              ; 0                 ; 0       ;
+;      - data_cnt[4]                              ; 0                 ; 0       ;
+;      - data_cnt[5]                              ; 0                 ; 0       ;
+;      - data_cnt[6]                              ; 0                 ; 0       ;
+;      - data_cnt[7]                              ; 0                 ; 0       ;
+;      - data_cnt[8]                              ; 0                 ; 0       ;
+;      - data_cnt[9]                              ; 0                 ; 0       ;
+;      - data_cnt[10]                             ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[0]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[1]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[2]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[3]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[4]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[5]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[6]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[7]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[8]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[9]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[10]              ; 0                 ; 0       ;
+;      - ip_protocol:ui|data_cnt[11]              ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[28]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|mac_data[0]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_des_mac[47]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[0]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[4]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[16]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[12]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[20]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[8]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[17]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[13]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[21]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[9]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[1]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[5]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[29]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|mac_data[1]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|mac_data[2]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[26]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[30]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[2]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[6]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[14]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[18]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[22]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[10]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[19]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[15]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[23]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[11]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|mac_data[3]               ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[3]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[7]   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[27]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_crc_res[31]  ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|send_data_en   ; 0                 ; 0       ;
+;      - ip_protocol:ui|eth_mac:u0|r_tx_en        ; 0                 ; 0       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[27]   ; 1                 ; 6       ;
+;      - fifo_da[0]                               ; 0                 ; 0       ;
+;      - ip_protocol:ui|cnt[4]                    ; 0                 ; 0       ;
+;      - ip_protocol:ui|cnt[2]                    ; 0                 ; 0       ;
+;      - ip_protocol:ui|cnt[1]                    ; 0                 ; 0       ;
+;      - ip_protocol:ui|cnt[0]                    ; 0                 ; 0       ;
+;      - ip_protocol:ui|cnt[3]                    ; 0                 ; 0       ;
+;      - ip_protocol:ui|cnt[5]                    ; 0                 ; 0       ;
+;      - ip_protocol:ui|cnt[6]                    ; 0                 ; 0       ;
+;      - cnt[0]                                   ; 0                 ; 0       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[3]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[7]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[19]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[15]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[23]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[11]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[18]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[14]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[22]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[10]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[2]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[6]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[26]   ; 1                 ; 6       ;
+;      - fifo_da[1]                               ; 0                 ; 0       ;
+;      - fifo_da[2]                               ; 0                 ; 0       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[25]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[31]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[1]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[5]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[13]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[17]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[21]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[9]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[16]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[12]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[20]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[8]    ; 1                 ; 6       ;
+;      - fifo_da[3]                               ; 0                 ; 0       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[0]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[4]    ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[24]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[30]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[29]   ; 1                 ; 6       ;
+;      - ip_protocol:ui|crc32_d4:crc_u1|Crc[28]   ; 1                 ; 6       ;
+; rst_n                                           ;                   ;         ;
++-------------------------------------------------+-------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                               ;
-+----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                             ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Equal62~7                        ; LCCOMB_X32_Y18_N30 ; 13      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; eth_mac:mac_lay|fifo_rq          ; LCCOMB_X31_Y17_N22 ; 11      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; eth_mac:mac_lay|r_data_num[0]~18 ; LCCOMB_X31_Y21_N30 ; 11      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; eth_mac:mac_lay|r_tx_en          ; FF_X31_Y17_N29     ; 7       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; mii_tx_clk                       ; PIN_D11            ; 64      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; rst_n                            ; PIN_E16            ; 64      ; Async. clear ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-+----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                ;
++--------------------------------------------+--------------------+---------+---------------------+--------+----------------------+------------------+---------------------------+
+; Name                                       ; Location           ; Fan-Out ; Usage               ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------------------------+--------------------+---------+---------------------+--------+----------------------+------------------+---------------------------+
+; Equal56~7                                  ; LCCOMB_X33_Y20_N30 ; 14      ; Sync. load          ; no     ; --                   ; --               ; --                        ;
+; ip_protocol:ui|Equal0~2                    ; LCCOMB_X31_Y19_N2  ; 13      ; Sync. load          ; no     ; --                   ; --               ; --                        ;
+; ip_protocol:ui|cnt[5]~1                    ; LCCOMB_X31_Y21_N20 ; 6       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[30]~3   ; LCCOMB_X32_Y21_N4  ; 32      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; ip_protocol:ui|data_cnt[0]~14              ; LCCOMB_X32_Y19_N30 ; 12      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; ip_protocol:ui|eth_mac:u0|crc_en~2         ; LCCOMB_X32_Y21_N22 ; 53      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~19 ; LCCOMB_X32_Y20_N6  ; 12      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; ip_protocol:ui|eth_mac:u0|r_tx_en          ; FF_X32_Y21_N29     ; 7       ; Sync. clear         ; no     ; --                   ; --               ; --                        ;
+; ip_protocol:ui|fifo_rq~2                   ; LCCOMB_X31_Y19_N8  ; 12      ; Sync. clear         ; no     ; --                   ; --               ; --                        ;
+; mii_tx_clk                                 ; PIN_D11            ; 150     ; Async. clear, Clock ; no     ; --                   ; --               ; --                        ;
+; rst_n                                      ; PIN_E16            ; 150     ; Async. clear, Clock ; yes    ; Global Clock         ; GCLK7            ; --                        ;
++--------------------------------------------+--------------------+---------+---------------------+--------+----------------------+------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -812,305 +905,501 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name  ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; rst_n ; PIN_E16  ; 64      ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
+; rst_n ; PIN_E16  ; 150     ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
 +-------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
-+---------------------------------------------+
-; Non-Global High Fan-Out Signals             ;
-+-----------------------------------+---------+
-; Name                              ; Fan-Out ;
-+-----------------------------------+---------+
-; mii_tx_clk~input                  ; 64      ;
-; data_cnt[2]                       ; 24      ;
-; data_cnt[0]                       ; 24      ;
-; eth_mac:mac_lay|sta_cnt[4]        ; 23      ;
-; eth_mac:mac_lay|sta_cnt[5]        ; 21      ;
-; data_cnt[3]                       ; 20      ;
-; data_cnt[5]                       ; 19      ;
-; data_cnt[1]                       ; 18      ;
-; eth_mac:mac_lay|r_des_mac[47]     ; 16      ;
-; data_cnt[6]                       ; 16      ;
-; eth_mac:mac_lay|sta_cnt[0]        ; 16      ;
-; data_cnt[4]                       ; 14      ;
-; eth_mac:mac_lay|sta_cnt[1]        ; 14      ;
-; Equal62~7                         ; 13      ;
-; eth_mac:mac_lay|sta_cnt[3]        ; 13      ;
-; eth_mac:mac_lay|sta_cnt[2]        ; 13      ;
-; eth_mac:mac_lay|r_data_num[0]~18  ; 11      ;
-; eth_mac:mac_lay|fifo_rq           ; 11      ;
-; Equal2~0                          ; 8       ;
-; ~GND                              ; 7       ;
-; eth_mac:mac_lay|r_tx_en           ; 7       ;
-; Equal41~2                         ; 6       ;
-; eth_mac:mac_lay|Mux3~5            ; 6       ;
-; WideOr1~41                        ; 4       ;
-; Equal6~0                          ; 4       ;
-; data_cnt[10]                      ; 4       ;
-; data_cnt[9]                       ; 4       ;
-; data_cnt[8]                       ; 4       ;
-; data_cnt[7]                       ; 4       ;
-; Equal14~0                         ; 3       ;
-; Equal6~1                          ; 3       ;
-; cnt[0]                            ; 3       ;
-; eth_mac:mac_lay|Mux3~16           ; 3       ;
-; eth_mac:mac_lay|Mux3~15           ; 3       ;
-; eth_mac:mac_lay|Mux3~6            ; 3       ;
-; eth_mac:mac_lay|r_data_num[10]    ; 3       ;
-; eth_mac:mac_lay|r_data_num[1]     ; 3       ;
-; eth_mac:mac_lay|r_data_num[0]     ; 3       ;
-; WideOr2~21                        ; 2       ;
-; Equal18~5                         ; 2       ;
-; eth_mac:mac_lay|r_data_num[0]~14  ; 2       ;
-; eth_mac:mac_lay|LessThan0~0       ; 2       ;
-; eth_mac:mac_lay|r_data_num[0]~12  ; 2       ;
-; eth_mac:mac_lay|r_data_num[0]~11  ; 2       ;
-; WideOr1~39                        ; 2       ;
-; Equal3~3                          ; 2       ;
-; WideOr1~37                        ; 2       ;
-; Equal9~0                          ; 2       ;
-; WideOr1~35                        ; 2       ;
-; Equal3~2                          ; 2       ;
-; WideOr0~0                         ; 2       ;
-; Equal31~0                         ; 2       ;
-; Equal3~0                          ; 2       ;
-; Equal27~0                         ; 2       ;
-; WideOr2~19                        ; 2       ;
-; Equal55~0                         ; 2       ;
-; Equal5~0                          ; 2       ;
-; Equal15~4                         ; 2       ;
-; Equal62~6                         ; 2       ;
-; Equal62~5                         ; 2       ;
-; Equal62~4                         ; 2       ;
-; eth_mac:mac_lay|Mux3~18           ; 2       ;
-; eth_mac:mac_lay|Mux3~4            ; 2       ;
-; eth_mac:mac_lay|r_data_num[9]     ; 2       ;
-; eth_mac:mac_lay|r_data_num[8]     ; 2       ;
-; eth_mac:mac_lay|r_data_num[7]     ; 2       ;
-; eth_mac:mac_lay|r_data_num[6]     ; 2       ;
-; eth_mac:mac_lay|r_data_num[5]     ; 2       ;
-; eth_mac:mac_lay|r_data_num[4]     ; 2       ;
-; eth_mac:mac_lay|r_data_num[3]     ; 2       ;
-; eth_mac:mac_lay|r_data_num[2]     ; 2       ;
-; cnt[23]                           ; 2       ;
-; cnt[22]                           ; 2       ;
-; cnt[21]                           ; 2       ;
-; cnt[20]                           ; 2       ;
-; cnt[19]                           ; 2       ;
-; cnt[18]                           ; 2       ;
-; cnt[17]                           ; 2       ;
-; cnt[16]                           ; 2       ;
-; cnt[15]                           ; 2       ;
-; cnt[14]                           ; 2       ;
-; cnt[13]                           ; 2       ;
-; cnt[12]                           ; 2       ;
-; cnt[11]                           ; 2       ;
-; cnt[10]                           ; 2       ;
-; cnt[9]                            ; 2       ;
-; cnt[8]                            ; 2       ;
-; cnt[7]                            ; 2       ;
-; cnt[6]                            ; 2       ;
-; cnt[5]                            ; 2       ;
-; cnt[4]                            ; 2       ;
-; cnt[3]                            ; 2       ;
-; cnt[2]                            ; 2       ;
-; cnt[1]                            ; 2       ;
-; cnt[0]~69                         ; 1       ;
-; eth_mac:mac_lay|Mux3~28           ; 1       ;
-; eth_mac:mac_lay|Mux3~27           ; 1       ;
-; eth_mac:mac_lay|Mux0~3            ; 1       ;
-; eth_mac:mac_lay|Mux0~2            ; 1       ;
-; WideOr1~43                        ; 1       ;
-; WideOr1~42                        ; 1       ;
-; WideOr2~23                        ; 1       ;
-; WideOr2~22                        ; 1       ;
-; WideOr2~3                         ; 1       ;
-; eth_mac:mac_lay|Mux2~10           ; 1       ;
-; eth_mac:mac_lay|Mux2~4            ; 1       ;
-; eth_mac:mac_lay|Mux2~3            ; 1       ;
-; WideOr1~24                        ; 1       ;
-; WideOr1~17                        ; 1       ;
-; WideOr1~16                        ; 1       ;
-; Equal15~5                         ; 1       ;
-; WideOr3~8                         ; 1       ;
-; eth_mac:mac_lay|r_data_num[0]~17  ; 1       ;
-; eth_mac:mac_lay|r_tx_en~1         ; 1       ;
-; eth_mac:mac_lay|r_tx_en~0         ; 1       ;
-; eth_mac:mac_lay|always3~0         ; 1       ;
-; eth_mac:mac_lay|r_data_num[0]~13  ; 1       ;
-; WideOr0~7                         ; 1       ;
-; WideOr0~6                         ; 1       ;
-; WideOr0~5                         ; 1       ;
-; WideOr0~4                         ; 1       ;
-; WideOr0~3                         ; 1       ;
-; WideOr0~2                         ; 1       ;
-; WideOr0~1                         ; 1       ;
-; WideOr1                           ; 1       ;
-; WideOr1~40                        ; 1       ;
-; Equal12~1                         ; 1       ;
-; Equal12~0                         ; 1       ;
-; WideOr1~38                        ; 1       ;
-; Equal11~1                         ; 1       ;
-; Equal11~0                         ; 1       ;
-; WideOr2                           ; 1       ;
-; Equal56~0                         ; 1       ;
-; WideOr1~36                        ; 1       ;
-; Equal54~0                         ; 1       ;
-; Equal53~0                         ; 1       ;
-; Equal3~1                          ; 1       ;
-; WideOr2~20                        ; 1       ;
-; Equal50~0                         ; 1       ;
-; WideOr3~7                         ; 1       ;
-; WideOr3~6                         ; 1       ;
-; WideOr3~5                         ; 1       ;
-; WideOr3~4                         ; 1       ;
-; WideOr3~3                         ; 1       ;
-; WideOr3~2                         ; 1       ;
-; WideOr2~18                        ; 1       ;
-; Equal25~0                         ; 1       ;
-; WideOr1~34                        ; 1       ;
-; Equal18~4                         ; 1       ;
-; Equal10~0                         ; 1       ;
-; eth_mac:mac_lay|r_des_mac[47]~0   ; 1       ;
-; Equal62~3                         ; 1       ;
-; Equal62~2                         ; 1       ;
-; Equal62~1                         ; 1       ;
-; Equal62~0                         ; 1       ;
-; eth_mac:mac_lay|send_data_en      ; 1       ;
-; eth_mac:mac_lay|Mux0~1            ; 1       ;
-; eth_mac:mac_lay|Mux3~26           ; 1       ;
-; fifo_da[3]                        ; 1       ;
-; eth_mac:mac_lay|Mux0~0            ; 1       ;
-; eth_mac:mac_lay|Mux3~25           ; 1       ;
-; eth_mac:mac_lay|Mux3~24           ; 1       ;
-; eth_mac:mac_lay|Mux1~1            ; 1       ;
-; eth_mac:mac_lay|Mux3~23           ; 1       ;
-; eth_mac:mac_lay|Mux3~22           ; 1       ;
-; fifo_da[2]                        ; 1       ;
-; eth_mac:mac_lay|Mux3~21           ; 1       ;
-; eth_mac:mac_lay|Mux1~0            ; 1       ;
-; eth_mac:mac_lay|Mux3~20           ; 1       ;
-; eth_mac:mac_lay|Mux2~9            ; 1       ;
-; eth_mac:mac_lay|Mux2~8            ; 1       ;
-; eth_mac:mac_lay|Mux3~19           ; 1       ;
-; eth_mac:mac_lay|Mux2~7            ; 1       ;
-; eth_mac:mac_lay|Mux3~17           ; 1       ;
-; fifo_da[1]                        ; 1       ;
-; eth_mac:mac_lay|Mux3~14           ; 1       ;
-; eth_mac:mac_lay|Mux3~13           ; 1       ;
-; fifo_da[0]                        ; 1       ;
-; eth_mac:mac_lay|Mux3~12           ; 1       ;
-; eth_mac:mac_lay|Mux3~11           ; 1       ;
-; eth_mac:mac_lay|Mux3~10           ; 1       ;
-; eth_mac:mac_lay|Mux3~9            ; 1       ;
-; eth_mac:mac_lay|Mux3~8            ; 1       ;
-; eth_mac:mac_lay|Mux3~7            ; 1       ;
-; eth_mac:mac_lay|always6~1         ; 1       ;
-; eth_mac:mac_lay|always6~0         ; 1       ;
-; eth_mac:mac_lay|mii_tx_da[3]      ; 1       ;
-; eth_mac:mac_lay|mii_tx_da[2]      ; 1       ;
-; eth_mac:mac_lay|mii_tx_da[1]      ; 1       ;
-; eth_mac:mac_lay|mii_tx_da[0]      ; 1       ;
-; eth_mac:mac_lay|mii_tx_en         ; 1       ;
-; eth_mac:mac_lay|r_data_num[10]~37 ; 1       ;
-; eth_mac:mac_lay|r_data_num[9]~36  ; 1       ;
-; eth_mac:mac_lay|r_data_num[9]~35  ; 1       ;
-; eth_mac:mac_lay|r_data_num[8]~34  ; 1       ;
-; eth_mac:mac_lay|r_data_num[8]~33  ; 1       ;
-; eth_mac:mac_lay|r_data_num[7]~32  ; 1       ;
-; eth_mac:mac_lay|r_data_num[7]~31  ; 1       ;
-; eth_mac:mac_lay|r_data_num[6]~30  ; 1       ;
-; eth_mac:mac_lay|r_data_num[6]~29  ; 1       ;
-; eth_mac:mac_lay|r_data_num[5]~28  ; 1       ;
-; eth_mac:mac_lay|r_data_num[5]~27  ; 1       ;
-; eth_mac:mac_lay|r_data_num[4]~26  ; 1       ;
-; eth_mac:mac_lay|r_data_num[4]~25  ; 1       ;
-; eth_mac:mac_lay|r_data_num[3]~24  ; 1       ;
-; eth_mac:mac_lay|r_data_num[3]~23  ; 1       ;
-; eth_mac:mac_lay|r_data_num[2]~22  ; 1       ;
-; eth_mac:mac_lay|r_data_num[2]~21  ; 1       ;
-; eth_mac:mac_lay|r_data_num[1]~20  ; 1       ;
-; eth_mac:mac_lay|r_data_num[1]~19  ; 1       ;
-; eth_mac:mac_lay|r_data_num[0]~16  ; 1       ;
-; eth_mac:mac_lay|r_data_num[0]~15  ; 1       ;
-; data_cnt[10]~31                   ; 1       ;
-; data_cnt[9]~30                    ; 1       ;
-; data_cnt[9]~29                    ; 1       ;
-; data_cnt[8]~28                    ; 1       ;
-; data_cnt[8]~27                    ; 1       ;
-; data_cnt[7]~26                    ; 1       ;
-; data_cnt[7]~25                    ; 1       ;
-; data_cnt[6]~24                    ; 1       ;
-; data_cnt[6]~23                    ; 1       ;
-; data_cnt[5]~22                    ; 1       ;
-; data_cnt[5]~21                    ; 1       ;
-; data_cnt[4]~20                    ; 1       ;
-; data_cnt[4]~19                    ; 1       ;
-; data_cnt[3]~18                    ; 1       ;
-; data_cnt[3]~17                    ; 1       ;
-; data_cnt[2]~16                    ; 1       ;
-; data_cnt[2]~15                    ; 1       ;
-; data_cnt[1]~14                    ; 1       ;
-; data_cnt[1]~13                    ; 1       ;
-; data_cnt[0]~12                    ; 1       ;
-; data_cnt[0]~11                    ; 1       ;
-; cnt[23]~67                        ; 1       ;
-; cnt[22]~66                        ; 1       ;
-; cnt[22]~65                        ; 1       ;
-; cnt[21]~64                        ; 1       ;
-; cnt[21]~63                        ; 1       ;
-; cnt[20]~62                        ; 1       ;
-; cnt[20]~61                        ; 1       ;
-; cnt[19]~60                        ; 1       ;
-; cnt[19]~59                        ; 1       ;
-; cnt[18]~58                        ; 1       ;
-; cnt[18]~57                        ; 1       ;
-; cnt[17]~56                        ; 1       ;
-; cnt[17]~55                        ; 1       ;
-; cnt[16]~54                        ; 1       ;
-; cnt[16]~53                        ; 1       ;
-; cnt[15]~52                        ; 1       ;
-; cnt[15]~51                        ; 1       ;
-; cnt[14]~50                        ; 1       ;
-; cnt[14]~49                        ; 1       ;
-; cnt[13]~48                        ; 1       ;
-; cnt[13]~47                        ; 1       ;
-; cnt[12]~46                        ; 1       ;
-; cnt[12]~45                        ; 1       ;
-; cnt[11]~44                        ; 1       ;
-; cnt[11]~43                        ; 1       ;
-; cnt[10]~42                        ; 1       ;
-; cnt[10]~41                        ; 1       ;
-; cnt[9]~40                         ; 1       ;
-; cnt[9]~39                         ; 1       ;
-; cnt[8]~38                         ; 1       ;
-; cnt[8]~37                         ; 1       ;
-; cnt[7]~36                         ; 1       ;
-; cnt[7]~35                         ; 1       ;
-; cnt[6]~34                         ; 1       ;
-; cnt[6]~33                         ; 1       ;
-; cnt[5]~32                         ; 1       ;
-; cnt[5]~31                         ; 1       ;
-; cnt[4]~30                         ; 1       ;
-; cnt[4]~29                         ; 1       ;
-; cnt[3]~28                         ; 1       ;
-; cnt[3]~27                         ; 1       ;
-; cnt[2]~26                         ; 1       ;
-; cnt[2]~25                         ; 1       ;
-; cnt[1]~24                         ; 1       ;
-; cnt[1]~23                         ; 1       ;
-; eth_mac:mac_lay|sta_cnt[5]~16     ; 1       ;
-; eth_mac:mac_lay|sta_cnt[4]~15     ; 1       ;
-; eth_mac:mac_lay|sta_cnt[4]~14     ; 1       ;
-; eth_mac:mac_lay|sta_cnt[3]~13     ; 1       ;
-; eth_mac:mac_lay|sta_cnt[3]~12     ; 1       ;
-; eth_mac:mac_lay|sta_cnt[2]~11     ; 1       ;
-; eth_mac:mac_lay|sta_cnt[2]~10     ; 1       ;
-; eth_mac:mac_lay|sta_cnt[1]~9      ; 1       ;
-; eth_mac:mac_lay|sta_cnt[1]~8      ; 1       ;
-; eth_mac:mac_lay|sta_cnt[0]~7      ; 1       ;
-; eth_mac:mac_lay|sta_cnt[0]~6      ; 1       ;
-+-----------------------------------+---------+
++-------------------------------------------------------+
+; Non-Global High Fan-Out Signals                       ;
++---------------------------------------------+---------+
+; Name                                        ; Fan-Out ;
++---------------------------------------------+---------+
+; mii_tx_clk~input                            ; 150     ;
+; ip_protocol:ui|eth_mac:u0|crc_en~2          ; 53      ;
+; ip_protocol:ui|eth_mac:u0|mii_tx_en         ; 34      ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[30]~3    ; 32      ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[1]        ; 29      ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[2]        ; 26      ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[0]        ; 26      ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[3]        ; 25      ;
+; ~GND                                        ; 19      ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[4]        ; 19      ;
+; data_cnt[5]                                 ; 17      ;
+; data_cnt[0]                                 ; 17      ;
+; Equal56~7                                   ; 14      ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[5]        ; 14      ;
+; ip_protocol:ui|Equal0~2                     ; 13      ;
+; ip_protocol:ui|cnt[5]                       ; 13      ;
+; ip_protocol:ui|cnt[2]                       ; 13      ;
+; ip_protocol:ui|data_cnt[0]~14               ; 12      ;
+; ip_protocol:ui|fifo_rq~2                    ; 12      ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~19  ; 12      ;
+; ip_protocol:ui|cnt[3]                       ; 12      ;
+; ip_protocol:ui|cnt[0]                       ; 12      ;
+; ip_protocol:ui|cnt[4]                       ; 12      ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[47]     ; 12      ;
+; data_cnt[3]                                 ; 12      ;
+; data_cnt[2]                                 ; 12      ;
+; data_cnt[4]                                 ; 12      ;
+; ip_protocol:ui|cnt[1]                       ; 11      ;
+; data_cnt[1]                                 ; 11      ;
+; ip_protocol:ui|cnt[6]                       ; 10      ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[1]     ; 10      ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~14  ; 9       ;
+; ip_protocol:ui|eth_mac:u0|LessThan0~0       ; 8       ;
+; ip_protocol:ui|eth_mac:u0|r_tx_en           ; 7       ;
+; ip_protocol:ui|cnt[5]~1                     ; 6       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~12   ; 6       ;
+; ip_protocol:ui|eth_mac:u0|mii_tx_da[3]      ; 6       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[28]      ; 5       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~13   ; 5       ;
+; ip_protocol:ui|eth_mac:u0|mii_tx_da[1]      ; 5       ;
+; ip_protocol:ui|eth_mac:u0|mii_tx_da[0]      ; 5       ;
+; data_cnt[10]                                ; 5       ;
+; data_cnt[9]                                 ; 5       ;
+; data_cnt[8]                                 ; 5       ;
+; data_cnt[7]                                 ; 5       ;
+; data_cnt[6]                                 ; 5       ;
+; ip_protocol:ui|mac_data[0]~3                ; 4       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~14   ; 4       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[30]      ; 4       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~10   ; 4       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[31]      ; 4       ;
+; ip_protocol:ui|eth_mac:u0|mii_tx_da[2]      ; 4       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~20   ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~19   ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~16   ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[29]      ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~11   ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[24]      ; 3       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[25]      ; 3       ;
+; cnt[0]                                      ; 3       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[0]     ; 3       ;
+; ip_protocol:ui|Equal0~1                     ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext[2]   ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~15   ; 2       ;
+; ip_protocol:ui|LessThan2~0                  ; 2       ;
+; ip_protocol:ui|eth_mac:u0|fifo_rq           ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[4]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[0]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[8]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[20]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[12]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[16]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[9]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[21]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[17]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[13]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[5]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[1]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[26]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[6]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[2]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[10]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[22]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[14]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[18]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[11]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[23]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[15]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[19]      ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[7]       ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[3]       ; 2       ;
+; Equal56~6                                   ; 2       ;
+; Equal56~5                                   ; 2       ;
+; Equal56~4                                   ; 2       ;
+; ip_protocol:ui|Equal0~0                     ; 2       ;
+; ip_protocol:ui|Mux3~3                       ; 2       ;
+; ip_protocol:ui|eth_mac:u0|crc_en~1          ; 2       ;
+; ip_protocol:ui|eth_mac:u0|crc_en~0          ; 2       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc[27]      ; 2       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~23           ; 2       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~15           ; 2       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~13           ; 2       ;
+; ip_protocol:ui|data_cnt[11]                 ; 2       ;
+; ip_protocol:ui|data_cnt[10]                 ; 2       ;
+; ip_protocol:ui|data_cnt[9]                  ; 2       ;
+; ip_protocol:ui|data_cnt[8]                  ; 2       ;
+; ip_protocol:ui|data_cnt[7]                  ; 2       ;
+; ip_protocol:ui|data_cnt[6]                  ; 2       ;
+; ip_protocol:ui|data_cnt[5]                  ; 2       ;
+; ip_protocol:ui|data_cnt[4]                  ; 2       ;
+; ip_protocol:ui|data_cnt[3]                  ; 2       ;
+; ip_protocol:ui|data_cnt[2]                  ; 2       ;
+; ip_protocol:ui|data_cnt[1]                  ; 2       ;
+; ip_protocol:ui|data_cnt[0]                  ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[11]    ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[10]    ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[9]     ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[8]     ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[7]     ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[6]     ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]     ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[4]     ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[3]     ; 2       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[2]     ; 2       ;
+; cnt[23]                                     ; 2       ;
+; cnt[22]                                     ; 2       ;
+; cnt[21]                                     ; 2       ;
+; cnt[20]                                     ; 2       ;
+; cnt[19]                                     ; 2       ;
+; cnt[18]                                     ; 2       ;
+; cnt[17]                                     ; 2       ;
+; cnt[16]                                     ; 2       ;
+; cnt[15]                                     ; 2       ;
+; cnt[14]                                     ; 2       ;
+; cnt[13]                                     ; 2       ;
+; cnt[12]                                     ; 2       ;
+; cnt[11]                                     ; 2       ;
+; cnt[10]                                     ; 2       ;
+; cnt[9]                                      ; 2       ;
+; cnt[8]                                      ; 2       ;
+; cnt[7]                                      ; 2       ;
+; cnt[6]                                      ; 2       ;
+; cnt[5]                                      ; 2       ;
+; cnt[4]                                      ; 2       ;
+; cnt[3]                                      ; 2       ;
+; cnt[2]                                      ; 2       ;
+; cnt[1]                                      ; 2       ;
+; cnt[0]~69                                   ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~36           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~35           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~17           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~16           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~15           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~14           ; 1       ;
+; WideOr3~30                                  ; 1       ;
+; WideOr3~29                                  ; 1       ;
+; WideOr0~20                                  ; 1       ;
+; WideOr0~19                                  ; 1       ;
+; WideOr1~20                                  ; 1       ;
+; WideOr1~19                                  ; 1       ;
+; WideOr2~32                                  ; 1       ;
+; WideOr2~31                                  ; 1       ;
+; WideOr3~13                                  ; 1       ;
+; WideOr3                                     ; 1       ;
+; WideOr3~22                                  ; 1       ;
+; WideOr3~21                                  ; 1       ;
+; WideOr3~19                                  ; 1       ;
+; WideOr3~18                                  ; 1       ;
+; WideOr0~3                                   ; 1       ;
+; WideOr0                                     ; 1       ;
+; WideOr0~12                                  ; 1       ;
+; WideOr0~11                                  ; 1       ;
+; WideOr0~9                                   ; 1       ;
+; WideOr0~8                                   ; 1       ;
+; WideOr1~3                                   ; 1       ;
+; WideOr1~21                                  ; 1       ;
+; WideOr1~12                                  ; 1       ;
+; WideOr1~11                                  ; 1       ;
+; WideOr1~9                                   ; 1       ;
+; WideOr1~8                                   ; 1       ;
+; WideOr2~15                                  ; 1       ;
+; WideOr2~33                                  ; 1       ;
+; WideOr2~24                                  ; 1       ;
+; WideOr2~23                                  ; 1       ;
+; WideOr2~21                                  ; 1       ;
+; WideOr2~20                                  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~34           ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~34       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext[28]  ; 1       ;
+; ip_protocol:ui|Mux0~6                       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext[29]  ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~33       ; 1       ;
+; ip_protocol:ui|fifo_rq~1                    ; 1       ;
+; ip_protocol:ui|LessThan1~2                  ; 1       ;
+; ip_protocol:ui|LessThan1~1                  ; 1       ;
+; ip_protocol:ui|LessThan1~0                  ; 1       ;
+; ip_protocol:ui|fifo_rq~0                    ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~32       ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~18  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~17  ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~31       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~30       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~29       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~28       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~27       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~26       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~25       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~24       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~23       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~22       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~21       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~18   ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~20       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~19       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~18       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~17       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~16       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|CrcNext~17   ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~15       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~14       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~13       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~12       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~11       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~10       ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~9        ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~8        ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~7        ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~6        ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~5        ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~4        ; 1       ;
+; ip_protocol:ui|cnt~7                        ; 1       ;
+; ip_protocol:ui|cnt~6                        ; 1       ;
+; ip_protocol:ui|cnt~5                        ; 1       ;
+; ip_protocol:ui|cnt~4                        ; 1       ;
+; ip_protocol:ui|cnt~3                        ; 1       ;
+; ip_protocol:ui|cnt~2                        ; 1       ;
+; ip_protocol:ui|cnt~0                        ; 1       ;
+; ip_protocol:ui|crc32_d4:crc_u1|Crc~2        ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_tx_en~1         ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_tx_en~0         ; 1       ;
+; ip_protocol:ui|eth_mac:u0|always4~0         ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~13  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~12  ; 1       ;
+; ip_protocol:ui|Mux0~5                       ; 1       ;
+; ip_protocol:ui|Mux0~4                       ; 1       ;
+; ip_protocol:ui|Mux0~3                       ; 1       ;
+; ip_protocol:ui|Mux0~2                       ; 1       ;
+; fifo_da[3]                                  ; 1       ;
+; ip_protocol:ui|Mux1~3                       ; 1       ;
+; ip_protocol:ui|Mux1~2                       ; 1       ;
+; ip_protocol:ui|Mux1~1                       ; 1       ;
+; ip_protocol:ui|Mux1~0                       ; 1       ;
+; fifo_da[2]                                  ; 1       ;
+; ip_protocol:ui|Mux2~4                       ; 1       ;
+; ip_protocol:ui|Mux2~3                       ; 1       ;
+; ip_protocol:ui|Mux2~2                       ; 1       ;
+; ip_protocol:ui|Mux2~1                       ; 1       ;
+; ip_protocol:ui|Mux2~0                       ; 1       ;
+; fifo_da[1]                                  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_des_mac[47]~0   ; 1       ;
+; Equal56~3                                   ; 1       ;
+; Equal56~2                                   ; 1       ;
+; Equal56~1                                   ; 1       ;
+; Equal56~0                                   ; 1       ;
+; ip_protocol:ui|Mux3~5                       ; 1       ;
+; ip_protocol:ui|mac_data[0]~2                ; 1       ;
+; ip_protocol:ui|Mux3~4                       ; 1       ;
+; ip_protocol:ui|Mux3~2                       ; 1       ;
+; ip_protocol:ui|Mux3~1                       ; 1       ;
+; ip_protocol:ui|Mux3~0                       ; 1       ;
+; fifo_da[0]                                  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|send_data_en      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~13           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~12           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~11           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~10           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[31]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[27]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[7]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[3]      ; 1       ;
+; ip_protocol:ui|mac_data[3]                  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~9            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~33           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[11]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~32           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[23]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[15]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[19]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux0~8            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux1~1            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~31           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~30           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[10]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~29           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[22]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[18]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[14]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~28           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[6]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[2]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux1~0            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~27           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~26           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~25           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~24           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[30]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[26]     ; 1       ;
+; ip_protocol:ui|mac_data[2]                  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~9            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~8            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~7            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~6            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~5            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~4            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~3            ; 1       ;
+; ip_protocol:ui|mac_data[1]                  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[29]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~2            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~1            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[5]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[1]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux2~0            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~22           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[9]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~21           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[21]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[13]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[17]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~20           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~19           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~18           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[8]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~17           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[20]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[12]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[16]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~16           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[4]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[0]      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~14           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~12           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~11           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~10           ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~9            ; 1       ;
+; ip_protocol:ui|eth_mac:u0|Mux3~8            ; 1       ;
+; ip_protocol:ui|mac_data[0]                  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_crc_res[28]     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|always7~1         ; 1       ;
+; ip_protocol:ui|eth_mac:u0|always7~0         ; 1       ;
+; ip_protocol:ui|data_cnt[11]~35              ; 1       ;
+; ip_protocol:ui|data_cnt[10]~34              ; 1       ;
+; ip_protocol:ui|data_cnt[10]~33              ; 1       ;
+; ip_protocol:ui|data_cnt[9]~32               ; 1       ;
+; ip_protocol:ui|data_cnt[9]~31               ; 1       ;
+; ip_protocol:ui|data_cnt[8]~30               ; 1       ;
+; ip_protocol:ui|data_cnt[8]~29               ; 1       ;
+; ip_protocol:ui|data_cnt[7]~28               ; 1       ;
+; ip_protocol:ui|data_cnt[7]~27               ; 1       ;
+; ip_protocol:ui|data_cnt[6]~26               ; 1       ;
+; ip_protocol:ui|data_cnt[6]~25               ; 1       ;
+; ip_protocol:ui|data_cnt[5]~24               ; 1       ;
+; ip_protocol:ui|data_cnt[5]~23               ; 1       ;
+; ip_protocol:ui|data_cnt[4]~22               ; 1       ;
+; ip_protocol:ui|data_cnt[4]~21               ; 1       ;
+; ip_protocol:ui|data_cnt[3]~20               ; 1       ;
+; ip_protocol:ui|data_cnt[3]~19               ; 1       ;
+; ip_protocol:ui|data_cnt[2]~18               ; 1       ;
+; ip_protocol:ui|data_cnt[2]~17               ; 1       ;
+; ip_protocol:ui|data_cnt[1]~16               ; 1       ;
+; ip_protocol:ui|data_cnt[1]~15               ; 1       ;
+; ip_protocol:ui|data_cnt[0]~13               ; 1       ;
+; ip_protocol:ui|data_cnt[0]~12               ; 1       ;
+; data_cnt[10]~31                             ; 1       ;
+; data_cnt[9]~30                              ; 1       ;
+; data_cnt[9]~29                              ; 1       ;
+; data_cnt[8]~28                              ; 1       ;
+; data_cnt[8]~27                              ; 1       ;
+; data_cnt[7]~26                              ; 1       ;
+; data_cnt[7]~25                              ; 1       ;
+; data_cnt[6]~24                              ; 1       ;
+; data_cnt[6]~23                              ; 1       ;
+; data_cnt[5]~22                              ; 1       ;
+; data_cnt[5]~21                              ; 1       ;
+; data_cnt[4]~20                              ; 1       ;
+; data_cnt[4]~19                              ; 1       ;
+; data_cnt[3]~18                              ; 1       ;
+; data_cnt[3]~17                              ; 1       ;
+; data_cnt[2]~16                              ; 1       ;
+; data_cnt[2]~15                              ; 1       ;
+; data_cnt[1]~14                              ; 1       ;
+; data_cnt[1]~13                              ; 1       ;
+; data_cnt[0]~12                              ; 1       ;
+; data_cnt[0]~11                              ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[11]~40 ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[10]~39 ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[10]~38 ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[9]~37  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[9]~36  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[8]~35  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[8]~34  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[7]~33  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[7]~32  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[6]~31  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[6]~30  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~29  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[5]~28  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[4]~27  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[4]~26  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[3]~25  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[3]~24  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[2]~23  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[2]~22  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[1]~21  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[1]~20  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[0]~16  ; 1       ;
+; ip_protocol:ui|eth_mac:u0|r_data_num[0]~15  ; 1       ;
+; cnt[23]~67                                  ; 1       ;
+; cnt[22]~66                                  ; 1       ;
+; cnt[22]~65                                  ; 1       ;
+; cnt[21]~64                                  ; 1       ;
+; cnt[21]~63                                  ; 1       ;
+; cnt[20]~62                                  ; 1       ;
+; cnt[20]~61                                  ; 1       ;
+; cnt[19]~60                                  ; 1       ;
+; cnt[19]~59                                  ; 1       ;
+; cnt[18]~58                                  ; 1       ;
+; cnt[18]~57                                  ; 1       ;
+; cnt[17]~56                                  ; 1       ;
+; cnt[17]~55                                  ; 1       ;
+; cnt[16]~54                                  ; 1       ;
+; cnt[16]~53                                  ; 1       ;
+; cnt[15]~52                                  ; 1       ;
+; cnt[15]~51                                  ; 1       ;
+; cnt[14]~50                                  ; 1       ;
+; cnt[14]~49                                  ; 1       ;
+; cnt[13]~48                                  ; 1       ;
+; cnt[13]~47                                  ; 1       ;
+; cnt[12]~46                                  ; 1       ;
+; cnt[12]~45                                  ; 1       ;
+; cnt[11]~44                                  ; 1       ;
+; cnt[11]~43                                  ; 1       ;
+; cnt[10]~42                                  ; 1       ;
+; cnt[10]~41                                  ; 1       ;
+; cnt[9]~40                                   ; 1       ;
+; cnt[9]~39                                   ; 1       ;
+; cnt[8]~38                                   ; 1       ;
+; cnt[8]~37                                   ; 1       ;
+; cnt[7]~36                                   ; 1       ;
+; cnt[7]~35                                   ; 1       ;
+; cnt[6]~34                                   ; 1       ;
+; cnt[6]~33                                   ; 1       ;
+; cnt[5]~32                                   ; 1       ;
+; cnt[5]~31                                   ; 1       ;
+; cnt[4]~30                                   ; 1       ;
+; cnt[4]~29                                   ; 1       ;
+; cnt[3]~28                                   ; 1       ;
+; cnt[3]~27                                   ; 1       ;
+; cnt[2]~26                                   ; 1       ;
+; cnt[2]~25                                   ; 1       ;
+; cnt[1]~24                                   ; 1       ;
+; cnt[1]~23                                   ; 1       ;
+; ip_protocol:ui|Add3~12                      ; 1       ;
+; ip_protocol:ui|Add3~11                      ; 1       ;
+; ip_protocol:ui|Add3~10                      ; 1       ;
+; ip_protocol:ui|Add3~9                       ; 1       ;
+; ip_protocol:ui|Add3~8                       ; 1       ;
+; ip_protocol:ui|Add3~7                       ; 1       ;
+; ip_protocol:ui|Add3~6                       ; 1       ;
+; ip_protocol:ui|Add3~5                       ; 1       ;
+; ip_protocol:ui|Add3~4                       ; 1       ;
+; ip_protocol:ui|Add3~3                       ; 1       ;
+; ip_protocol:ui|Add3~2                       ; 1       ;
+; ip_protocol:ui|Add3~1                       ; 1       ;
+; ip_protocol:ui|Add3~0                       ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[5]~16     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[4]~15     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[4]~14     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[3]~13     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[3]~12     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[2]~11     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[2]~10     ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[1]~9      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[1]~8      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[0]~7      ; 1       ;
+; ip_protocol:ui|eth_mac:u0|sta_cnt[0]~6      ; 1       ;
++---------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -1118,138 +1407,146 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 118 / 32,401 ( < 1 % ) ;
-; C16 interconnects           ; 2 / 1,326 ( < 1 % )    ;
-; C4 interconnects            ; 71 / 21,816 ( < 1 % )  ;
-; Direct links                ; 17 / 32,401 ( < 1 % )  ;
+; Block interconnects         ; 227 / 32,401 ( < 1 % ) ;
+; C16 interconnects           ; 1 / 1,326 ( < 1 % )    ;
+; C4 interconnects            ; 75 / 21,816 ( < 1 % )  ;
+; Direct links                ; 58 / 32,401 ( < 1 % )  ;
 ; Global clocks               ; 1 / 10 ( 10 % )        ;
-; Local interconnects         ; 139 / 10,320 ( 1 % )   ;
+; Local interconnects         ; 209 / 10,320 ( 2 % )   ;
 ; R24 interconnects           ; 0 / 1,289 ( 0 % )      ;
-; R4 interconnects            ; 67 / 28,186 ( < 1 % )  ;
+; R4 interconnects            ; 75 / 28,186 ( < 1 % )  ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 14.75) ; Number of LABs  (Total = 12) ;
+; Number of Logic Elements  (Average = 14.05) ; Number of LABs  (Total = 20) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
-; 2                                           ; 0                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 1                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
-; 9                                           ; 1                            ;
+; 9                                           ; 0                            ;
 ; 10                                          ; 0                            ;
 ; 11                                          ; 0                            ;
-; 12                                          ; 0                            ;
-; 13                                          ; 1                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 5                            ;
-; 16                                          ; 5                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 2                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 13                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.42) ; Number of LABs  (Total = 12) ;
+; LAB-wide Signals  (Average = 1.90) ; Number of LABs  (Total = 20) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 8                            ;
-; 1 Clock                            ; 8                            ;
+; 1 Async. clear                     ; 15                           ;
+; 1 Clock                            ; 15                           ;
+; 1 Clock enable                     ; 4                            ;
 ; 1 Sync. clear                      ; 1                            ;
+; 1 Sync. load                       ; 1                            ;
+; 2 Clock enables                    ; 2                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 20.08) ; Number of LABs  (Total = 12) ;
+; Number of Signals Sourced  (Average = 21.50) ; Number of LABs  (Total = 20) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 1                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
+; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 0                            ;
+; 12                                           ; 1                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 3                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 1                            ;
 ; 16                                           ; 0                            ;
 ; 17                                           ; 0                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 1                            ;
+; 18                                           ; 2                            ;
+; 19                                           ; 0                            ;
 ; 20                                           ; 1                            ;
-; 21                                           ; 1                            ;
+; 21                                           ; 0                            ;
 ; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
-; 28                                           ; 2                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 5                            ;
+; 29                                           ; 1                            ;
+; 30                                           ; 0                            ;
+; 31                                           ; 1                            ;
+; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 5.17) ; Number of LABs  (Total = 12) ;
+; Number of Signals Sourced Out  (Average = 5.10) ; Number of LABs  (Total = 20) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 1                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 0                            ;
-; 4                                               ; 5                            ;
-; 5                                               ; 1                            ;
+; 1                                               ; 2                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 4                            ;
+; 4                                               ; 4                            ;
+; 5                                               ; 2                            ;
 ; 6                                               ; 1                            ;
-; 7                                               ; 0                            ;
+; 7                                               ; 1                            ;
 ; 8                                               ; 1                            ;
-; 9                                               ; 1                            ;
+; 9                                               ; 0                            ;
 ; 10                                              ; 0                            ;
 ; 11                                              ; 1                            ;
+; 12                                              ; 1                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 9.00) ; Number of LABs  (Total = 12) ;
+; Number of Distinct Inputs  (Average = 9.80) ; Number of LABs  (Total = 20) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
-; 2                                           ; 0                            ;
+; 2                                           ; 1                            ;
 ; 3                                           ; 1                            ;
-; 4                                           ; 1                            ;
-; 5                                           ; 2                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 1                            ;
 ; 6                                           ; 1                            ;
-; 7                                           ; 1                            ;
+; 7                                           ; 4                            ;
 ; 8                                           ; 0                            ;
-; 9                                           ; 3                            ;
+; 9                                           ; 1                            ;
 ; 10                                          ; 0                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 0                            ;
-; 13                                          ; 1                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 1                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 2                            ;
+; 15                                          ; 3                            ;
 ; 16                                          ; 0                            ;
 ; 17                                          ; 0                            ;
-; 18                                          ; 0                            ;
+; 18                                          ; 1                            ;
 ; 19                                          ; 0                            ;
 ; 20                                          ; 0                            ;
-; 21                                          ; 0                            ;
-; 22                                          ; 0                            ;
-; 23                                          ; 1                            ;
+; 21                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1375,17 +1672,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
+; I/O             ; mii_tx_clk           ; 4.0               ;
++-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
 
 
-+---------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                       ;
-+-----------------+-------------------------------+-------------------+
-; Source Register ; Destination Register          ; Delay Added in ns ;
-+-----------------+-------------------------------+-------------------+
-; mii_tx_clk      ; eth_mac:mac_lay|r_data_num[0] ; 0.390             ;
-+-----------------+-------------------------------+-------------------+
++-------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                 ;
++-----------------+-----------------------------------------+-------------------+
+; Source Register ; Destination Register                    ; Delay Added in ns ;
++-----------------+-----------------------------------------+-------------------+
+; mii_tx_clk      ; ip_protocol:ui|eth_mac:u0|r_data_num[0] ; 0.538             ;
++-----------------+-----------------------------------------+-------------------+
 Note: This table only shows the top 1 path(s) that have the largest delay added for hold.
 
 
@@ -1413,6 +1712,7 @@ Critical Warning (169085): No exact pin location assignment(s) for 1 pins of 16 
     Info (169086): Pin mii_tx_er not assigned to an exact location on the device
 Info (332104): Reading SDC File: 'eth.sdc'
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Warning (332060): Node: rst_n was determined to be a clock but was found without an associated clock assignment.
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
 Info (332111): Found 1 clocks
@@ -1450,17 +1750,17 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 5473 megabytes
-    Info: Processing ended: Fri Feb 22 14:57:58 2019
-    Info: Elapsed time: 00:00:04
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 5479 megabytes
+    Info: Processing ended: Sat Feb 23 10:35:32 2019
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 
 

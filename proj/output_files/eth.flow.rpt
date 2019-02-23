@@ -1,5 +1,5 @@
 Flow report for eth
-Fri Feb 22 14:58:04 2019
+Sat Feb 23 10:35:38 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 22 14:58:04 2019       ;
+; Flow Status                        ; Successful - Sat Feb 23 10:35:38 2019       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; eth                                         ;
-; Top-level Entity Name              ; eth                                         ;
+; Top-level Entity Name              ; ip_proto_test                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10F17C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 177 / 10,320 ( 2 % )                        ;
-;     Total combinational functions  ; 177 / 10,320 ( 2 % )                        ;
-;     Dedicated logic registers      ; 64 / 10,320 ( < 1 % )                       ;
-; Total registers                    ; 64                                          ;
+; Total logic elements               ; 281 / 10,320 ( 3 % )                        ;
+;     Total combinational functions  ; 269 / 10,320 ( 3 % )                        ;
+;     Dedicated logic registers      ; 150 / 10,320 ( 1 % )                        ;
+; Total registers                    ; 150                                         ;
 ; Total pins                         ; 16 / 180 ( 9 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                         ;
@@ -64,45 +64,70 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/22/2019 14:57:51 ;
+; Start date & time ; 02/23/2019 10:35:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; eth                 ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+--------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+--------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 690516656130.155081867143904          ; --            ; --          ; --             ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; eth_mac_tb     ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; eth_tb         ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; eth_tb                                ; --            ; --          ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                       ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_FILE                  ; ../tb/eth_mac_tb.v                    ; --            ; --          ; eth_mac_tb     ;
-; EDA_TEST_BENCH_FILE                  ; ../rtl/eth_mac.v                      ; --            ; --          ; eth_mac_tb     ;
-; EDA_TEST_BENCH_FILE                  ; ../rtl/eth.v                          ; --            ; --          ; eth_mac_tb     ;
-; EDA_TEST_BENCH_FILE                  ; ../tb/eth_tb.v                        ; --            ; --          ; eth_tb         ;
-; EDA_TEST_BENCH_FILE                  ; ../rtl/eth_mac.v                      ; --            ; --          ; eth_tb         ;
-; EDA_TEST_BENCH_FILE                  ; ../rtl/eth.v                          ; --            ; --          ; eth_tb         ;
-; EDA_TEST_BENCH_MODULE_NAME           ; eth_mac_tb                            ; --            ; --          ; eth_mac_tb     ;
-; EDA_TEST_BENCH_MODULE_NAME           ; eth_tb                                ; --            ; --          ; eth_tb         ;
-; EDA_TEST_BENCH_NAME                  ; eth_mac_tb                            ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_NAME                  ; eth_tb                                ; --            ; --          ; eda_simulation ;
-; EDA_TIME_SCALE                       ; 1 ps                                  ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                     ; --            ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                  ; --            ; --          ; --             ;
-; PARTITION_COLOR                      ; 16764057                              ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                          ; --            ; --          ; --             ;
-+--------------------------------------+---------------------------------------+---------------+-------------+----------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                ;
++--------------------------------------+---------------------------------------+---------------+---------------+------------------+
+; Assignment Name                      ; Value                                 ; Default Value ; Entity Name   ; Section Id       ;
++--------------------------------------+---------------------------------------+---------------+---------------+------------------+
+; COMPILER_SIGNATURE_ID                ; 690516656130.155088932440608          ; --            ; --            ; --               ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --            ; eth_mac_tb       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --            ; eth_tb           ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --            ; check_sum_tb     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --            ; ip_protocol_tb   ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --            ; ip_proto_test_tb ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; ip_proto_test_tb                      ; --            ; --            ; eda_simulation   ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --            ; --            ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)             ; <None>        ; --            ; --               ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                       ; --            ; --            ; eda_simulation   ;
+; EDA_TEST_BENCH_FILE                  ; ../tb/eth_mac_tb.v                    ; --            ; --            ; eth_mac_tb       ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/eth_mac.v                      ; --            ; --            ; eth_mac_tb       ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/eth.v                          ; --            ; --            ; eth_mac_tb       ;
+; EDA_TEST_BENCH_FILE                  ; ../tb/eth_tb.v                        ; --            ; --            ; eth_tb           ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/eth_mac.v                      ; --            ; --            ; eth_tb           ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/eth.v                          ; --            ; --            ; eth_tb           ;
+; EDA_TEST_BENCH_FILE                  ; ../tb/check_sum_tb.v                  ; --            ; --            ; check_sum_tb     ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/check_sum.v                    ; --            ; --            ; check_sum_tb     ;
+; EDA_TEST_BENCH_FILE                  ; ../tb/ip_protocol_tb.v                ; --            ; --            ; ip_protocol_tb   ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/eth_mac.v                      ; --            ; --            ; ip_protocol_tb   ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/crc32_d4.v                     ; --            ; --            ; ip_protocol_tb   ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/eth.v                          ; --            ; --            ; ip_protocol_tb   ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/check_sum.v                    ; --            ; --            ; ip_protocol_tb   ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/ip_protocol.v                  ; --            ; --            ; ip_protocol_tb   ;
+; EDA_TEST_BENCH_FILE                  ; ../tb/ip_proto_test_tb.v              ; --            ; --            ; ip_proto_test_tb ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/eth_mac.v                      ; --            ; --            ; ip_proto_test_tb ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/crc32_d4.v                     ; --            ; --            ; ip_proto_test_tb ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/eth.v                          ; --            ; --            ; ip_proto_test_tb ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/check_sum.v                    ; --            ; --            ; ip_proto_test_tb ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/ip_protocol.v                  ; --            ; --            ; ip_proto_test_tb ;
+; EDA_TEST_BENCH_FILE                  ; ../rtl/ip_proto_test.v                ; --            ; --            ; ip_proto_test_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; eth_mac_tb                            ; --            ; --            ; eth_mac_tb       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; eth_tb                                ; --            ; --            ; eth_tb           ;
+; EDA_TEST_BENCH_MODULE_NAME           ; check_sum_tb                          ; --            ; --            ; check_sum_tb     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ip_protocol_tb                        ; --            ; --            ; ip_protocol_tb   ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ip_proto_test_tb                      ; --            ; --            ; ip_proto_test_tb ;
+; EDA_TEST_BENCH_NAME                  ; eth_mac_tb                            ; --            ; --            ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; eth_tb                                ; --            ; --            ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; check_sum_tb                          ; --            ; --            ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; ip_protocol_tb                        ; --            ; --            ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; ip_proto_test_tb                      ; --            ; --            ; eda_simulation   ;
+; EDA_TIME_SCALE                       ; 1 ps                                  ; --            ; --            ; eda_simulation   ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                    ; --            ; --            ; --               ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                     ; --            ; --            ; --               ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                  ; --            ; --            ; --               ;
+; PARTITION_COLOR                      ; 16764057                              ; --            ; ip_proto_test ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --            ; ip_proto_test ; Top              ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --            ; ip_proto_test ; Top              ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                   ; --            ; --            ; --               ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --            ; --               ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                          ; --            ; --            ; --               ;
+; TOP_LEVEL_ENTITY                     ; ip_proto_test                         ; eth           ; --            ; --               ;
++--------------------------------------+---------------------------------------+---------------+---------------+------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -110,12 +135,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4640 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 5473 MB             ; 00:00:04                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 4569 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4660 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4539 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:09                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4640 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:04     ; 1.0                     ; 5479 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4568 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4663 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4550 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

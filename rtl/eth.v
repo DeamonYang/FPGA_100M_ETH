@@ -43,13 +43,30 @@ module eth(
 	wire fifo_rq;
 	reg[3:0] fifo_da;
 	
+	wire[3:0]crc_res;
+	wire crc_en;
+	
+	crc32_d4 crc_u1(
+			.Clk		(rst_n), 
+			.Rst_n		(mii_tx_clk), 
+			.Data		(mii_tx_da), 
+			.Enable	(crc_en), 
+			.Initialize(~mii_tx_en), 
+			.Crc()		, 
+			.CrcError	(), 
+			.Crc_eth	(crc_res)
+		);
+	
+	
+	
 	eth_mac mac_lay(
 		.rst_n		(rst_n			),
 		.tx_go		(tx_go			),
-		.data_len	(11'd92		),
+		.data_len	(11'd105		),
 		.des_mac		(48'hff_ff_ff_ff_ff_ff		),
 		.src_mac		(48'h00_0a_35_01_fe_c0		),	
-		.crc_res		(	crc_result	),
+		.crc_res		(crc_res	),
+		.crc_en		(crc_en),
 		.len_type	(16'h08_06		),
 		.fifo_rq		(fifo_rq		),
 		.fifo_ck		(fifo_ck		),
@@ -191,7 +208,7 @@ module eth(
 			89: fifo_da =	4'h0;
 			90: fifo_da =	4'h1;
 			91: fifo_da =	4'h0;
-			default:fifo_da = 4'h0;
+			default:fifo_da = 4'hd;
 		endcase
 	end
 	
