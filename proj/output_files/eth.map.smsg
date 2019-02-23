@@ -1,2 +1,3 @@
 Warning (10268): Verilog HDL information at ip_proto_test.v(74): always construct contains both blocking and non-blocking assignments
 Warning (10268): Verilog HDL information at eth.v(89): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at udp_proto_test.v(76): always construct contains both blocking and non-blocking assignments

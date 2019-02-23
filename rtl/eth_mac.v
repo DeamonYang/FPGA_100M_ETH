@@ -204,15 +204,6 @@ module eth_mac(
 		45:	mii_tx_da <= fifo_da ;	
 
 		/*CRC校验*/
-		/*手动CRC校验*/
-//		46:	mii_tx_da <= r_crc_res[27:24];
-//		47:	mii_tx_da <= r_crc_res[31:28];
-//		48:	mii_tx_da <= r_crc_res[19:16];
-//		49:	mii_tx_da <= r_crc_res[23:20];
-//		50:	mii_tx_da <= r_crc_res[11:8];
-//		51:	mii_tx_da <= r_crc_res[15:12];
-//		52:	mii_tx_da <= r_crc_res[3:0];
-//		53:	mii_tx_da <= r_crc_res[7:4];	
 
 		46:	mii_tx_da <= r_crc_res[31:28];
 		47:	mii_tx_da <= r_crc_res[27:24];
@@ -228,7 +219,7 @@ module eth_mac(
 	always@(posedge mii_tx_clk or negedge rst_n)
 	if(!rst_n)
 		mii_tx_en <= 1'b0;
-	else if(sta_cnt > 0 && sta_cnt < 52)
+	else if(sta_cnt > 0 && sta_cnt < 54)
 		mii_tx_en <= 1'b1;
 	else
 		mii_tx_en <= 1'b0;

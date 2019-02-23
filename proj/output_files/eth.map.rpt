@@ -1,5 +1,5 @@
 Analysis & Synthesis report for eth
-Sat Feb 23 10:35:26 2019
+Sat Feb 23 17:25:50 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -11,21 +11,24 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |ip_proto_test
- 13. Parameter Settings for User Entity Instance: ip_protocol:ui|crc32_d4:crc_u1
- 14. Port Connectivity Checks: "ip_protocol:ui|check_sum:cksum_u7"
- 15. Port Connectivity Checks: "ip_protocol:ui|eth_mac:u0"
- 16. Port Connectivity Checks: "ip_protocol:ui|crc32_d4:crc_u1"
- 17. Port Connectivity Checks: "ip_protocol:ui"
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
- 20. Analysis & Synthesis Suppressed Messages
+  6. Partition Status Summary
+  7. Dependent File Changes for Partition Top
+  8. Partition for Top-Level Resource Utilization by Entity
+  9. Registers Removed During Synthesis
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |udp_proto_test
+ 12. Parameter Settings for User Entity Instance: udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1
+ 13. Partition Dependent Files
+ 14. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 15. Port Connectivity Checks: "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|check_sum:cksum_u7"
+ 16. Port Connectivity Checks: "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0"
+ 17. Port Connectivity Checks: "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1"
+ 18. Port Connectivity Checks: "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3"
+ 19. Port Connectivity Checks: "udp_protocol:udp_protocol_u0"
+ 20. SignalTap II Logic Analyzer Settings
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,20 +54,20 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Feb 23 10:35:26 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Feb 23 17:25:50 2019       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; eth                                         ;
-; Top-level Entity Name              ; ip_proto_test                               ;
+; Top-level Entity Name              ; udp_proto_test                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 297                                         ;
-;     Total combinational functions  ; 269                                         ;
-;     Dedicated logic registers      ; 150                                         ;
-; Total registers                    ; 150                                         ;
-; Total pins                         ; 16                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -74,7 +77,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE10F17C8       ;                    ;
-; Top-level entity name                                                      ; ip_proto_test      ; eth                ;
+; Top-level entity name                                                      ; udp_proto_test     ; eth                ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -163,221 +166,286 @@ applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Average used               ; 1.60        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ;  60.0%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                               ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                 ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
-; ../rtl/ip_proto_test.v           ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/ip_proto_test.v ;         ;
-; ../rtl/ip_protocol.v             ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v   ;         ;
-; ../rtl/crc32_d4.v                ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/crc32_d4.v      ;         ;
-; ../rtl/eth_mac.v                 ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v       ;         ;
-; ../rtl/check_sum.v               ; yes             ; User Verilog HDL File  ; L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v     ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; ../rtl/ip_protocol.v             ; yes             ; User Verilog HDL File        ; L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v                                                ;         ;
+; ../rtl/crc32_d4.v                ; yes             ; User Verilog HDL File        ; L:/FPWG_WORK/FPGA_100ETH/rtl/crc32_d4.v                                                   ;         ;
+; ../rtl/eth_mac.v                 ; yes             ; User Verilog HDL File        ; L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v                                                    ;         ;
+; ../rtl/check_sum.v               ; yes             ; User Verilog HDL File        ; L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v                                                  ;         ;
+; ../rtl/udp_protocol.v            ; yes             ; User Verilog HDL File        ; L:/FPWG_WORK/FPGA_100ETH/rtl/udp_protocol.v                                               ;         ;
+; ../rtl/udp_proto_test.v          ; yes             ; User Verilog HDL File        ; L:/FPWG_WORK/FPGA_100ETH/rtl/udp_proto_test.v                                             ;         ;
+; sld_signaltap.vhd                ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_signaltap.vhd            ;         ;
+; sld_signaltap_impl.vhd           ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_signaltap_impl.vhd       ;         ;
+; sld_ela_control.vhd              ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_ela_control.vhd          ;         ;
+; lpm_shiftreg.tdf                 ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_shiftreg.tdf             ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_constant.inc             ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/dffeea.inc                   ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/aglobal130.inc               ;         ;
+; sld_mbpmg.vhd                    ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_mbpmg.vhd                ;         ;
+; sld_start_stop.vhd               ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_start_stop.vhd           ;         ;
+; sld_ela_trigger_flow_mgr.vhd     ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd ;         ;
+; sld_buffer_manager.vhd           ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_buffer_manager.vhd       ;         ;
+; sld_gap_detector.vhd             ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_gap_detector.vhd         ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/altsyncram.tdf               ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/stratix_ram_block.inc        ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_mux.inc                  ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_decode.inc               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/a_rdenreg.inc                ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/altrom.inc                   ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/altram.inc                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/altdpram.inc                 ;         ;
+; db/altsyncram_er14.tdf           ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/altsyncram_er14.tdf                                      ;         ;
+; altdpram.tdf                     ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/altdpram.tdf                 ;         ;
+; memmodes.inc                     ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/others/maxplus2/memmodes.inc               ;         ;
+; a_hdffe.inc                      ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/a_hdffe.inc                  ;         ;
+; alt_le_rden_reg.inc              ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/alt_le_rden_reg.inc          ;         ;
+; altsyncram.inc                   ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/altsyncram.inc               ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_mux.tdf                  ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/muxlut.inc                   ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/bypassff.inc                 ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/altshift.inc                 ;         ;
+; db/mux_usc.tdf                   ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/mux_usc.tdf                                              ;         ;
+; lpm_decode.tdf                   ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_decode.tdf               ;         ;
+; declut.inc                       ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/declut.inc                   ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_compare.inc              ;         ;
+; db/decode_dvf.tdf                ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/decode_dvf.tdf                                           ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_counter.tdf              ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_add_sub.inc              ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/cmpconst.inc                 ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/lpm_counter.inc              ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/alt_counter_stratix.inc      ;         ;
+; db/cntr_tei.tdf                  ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/cntr_tei.tdf                                             ;         ;
+; db/cmpr_pgc.tdf                  ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/cmpr_pgc.tdf                                             ;         ;
+; db/cntr_l6j.tdf                  ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/cntr_l6j.tdf                                             ;         ;
+; db/cntr_hgi.tdf                  ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/cntr_hgi.tdf                                             ;         ;
+; db/cmpr_rgc.tdf                  ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/cmpr_rgc.tdf                                             ;         ;
+; db/cntr_23j.tdf                  ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/cntr_23j.tdf                                             ;         ;
+; db/cmpr_ngc.tdf                  ; yes             ; Auto-Generated Megafunction  ; L:/FPWG_WORK/FPGA_100ETH/proj/db/cmpr_ngc.tdf                                             ;         ;
+; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_rom_sr.vhd               ;         ;
+; sld_hub.vhd                      ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_hub.vhd                  ;         ;
+; sld_jtag_hub.vhd                 ; yes             ; Encrypted Megafunction       ; d:/major_soft/soft/quartus13/quartus/libraries/megafunctions/sld_jtag_hub.vhd             ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 297              ;
-;                                             ;                  ;
-; Total combinational functions               ; 269              ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 152              ;
-;     -- 3 input functions                    ; 34               ;
-;     -- <=2 input functions                  ; 83               ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 204              ;
-;     -- arithmetic mode                      ; 65               ;
-;                                             ;                  ;
-; Total registers                             ; 150              ;
-;     -- Dedicated logic registers            ; 150              ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 16               ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-; Maximum fan-out node                        ; mii_tx_clk~input ;
-; Maximum fan-out                             ; 150              ;
-; Total fan-out                               ; 1490             ;
-; Average fan-out                             ; 3.30             ;
-+---------------------------------------------+------------------+
++------------------------------------------------------------------------+
+; Partition Status Summary                                               ;
++--------------------------------+-------------+-------------------------+
+; Partition Name                 ; Synthesized ; Reason                  ;
++--------------------------------+-------------+-------------------------+
+; Top                            ; yes         ; Dependent files changed ;
+; sld_hub:auto_hub               ; yes         ; Parameters changed      ;
+; sld_signaltap:auto_signaltap_0 ; no          ; No relevant changes     ;
++--------------------------------+-------------+-------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                   ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
-; |ip_proto_test             ; 269 (76)          ; 150 (39)     ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |ip_proto_test                                ;              ;
-;    |ip_protocol:ui|        ; 193 (60)          ; 111 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ip_proto_test|ip_protocol:ui                 ;              ;
-;       |crc32_d4:crc_u1|    ; 47 (47)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ip_proto_test|ip_protocol:ui|crc32_d4:crc_u1 ;              ;
-;       |eth_mac:u0|         ; 86 (86)           ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ip_proto_test|ip_protocol:ui|eth_mac:u0      ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Dependent File Changes for Partition Top                                                                                                                                                                ;
++----------------------------------------------------------------------------+-----------------------+-------------------+----------+----------------------------------+----------------------------------+
+; Hierarchy                                                                  ; File Name             ; Relative Location ; Change   ; Old                              ; New                              ;
++----------------------------------------------------------------------------+-----------------------+-------------------+----------+----------------------------------+----------------------------------+
+; udp_protocol:udp_protocol_u0                                               ; ../rtl/udp_protocol.v ; Project Directory ; Checksum ; 985e89975829a47f55c52d517b409c56 ; 5dad590b1434efecdc96b75d589b5bb2 ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0 ; ../rtl/eth_mac.v      ; Project Directory ; Checksum ; 07fd00f532ffb6970bf092a65142c3c4 ; d4425cfc35257ef168efa3f9fa2596c4 ;
++----------------------------------------------------------------------------+-----------------------+-------------------+----------+----------------------------------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                                                                     ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Library Name ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+--------------+
+; |udp_proto_test                    ; 330 (103)         ; 173 (39)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test                                                                            ; work         ;
+;    |udp_protocol:udp_protocol_u0|  ; 227 (40)          ; 134 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0                                               ; work         ;
+;       |ip_protocol:ip_protocol_u3| ; 187 (53)          ; 111 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3                    ; work         ;
+;          |crc32_d4:crc_u1|         ; 47 (47)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1    ; work         ;
+;          |eth_mac:eth_mac_u0|      ; 87 (87)           ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0 ; work         ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                           ;
-+----------------------------------------------------------------------------------------+-----------------------------------------------------+
-; Register name                                                                          ; Reason for Removal                                  ;
-+----------------------------------------------------------------------------------------+-----------------------------------------------------+
-; ip_protocol:ui|eth_mac:u0|r_des_mac[2,4,5,11,17..19,21,22,26,28,29,32,36,40..42,45,46] ; Stuck at GND due to stuck port data_in              ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[0..5,8,17..23,25,27,30..32,34,36..47]              ; Stuck at GND due to stuck port data_in              ;
-; ip_protocol:ui|eth_mac:u0|r_len_type[0..14]                                            ; Stuck at GND due to stuck port data_in              ;
-; ip_protocol:ui|eth_mac:u0|r_len_type[15]                                               ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[6]  ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[6]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[7]  ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[7]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[9]  ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[9]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[10] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[10]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[11] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[11]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[12] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[12]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[13] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[13]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[14] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[14]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[15] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[15]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[16] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[16]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[24] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[24]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[26] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[26]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[28] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[28]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[29] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[29]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[33] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[33]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_src_mac[35] ;
-; ip_protocol:ui|eth_mac:u0|r_src_mac[35]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[0]  ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[0]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[1]  ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[1]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[3]  ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[3]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[6]  ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[6]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[7]  ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[7]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[8]  ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[8]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[9]  ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[9]                                                 ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[10] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[10]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[12] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[12]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[13] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[13]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[14] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[14]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[15] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[15]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[16] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[16]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[20] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[20]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[23] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[23]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[24] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[24]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[25] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[25]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[27] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[27]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[30] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[30]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[31] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[31]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[33] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[33]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[34] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[34]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[35] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[35]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[37] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[37]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[38] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[38]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[39] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[39]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[43] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[43]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[44] ;
-; ip_protocol:ui|eth_mac:u0|r_des_mac[44]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_des_mac[47] ;
-; ip_protocol:ui|eth_mac:u0|r_crc_res[25]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_crc_res[29] ;
-; ip_protocol:ui|eth_mac:u0|r_crc_res[24]                                                ; Merged with ip_protocol:ui|eth_mac:u0|r_crc_res[28] ;
-; Total Number of Removed Registers = 113                                                ;                                                     ;
-+----------------------------------------------------------------------------------------+-----------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                           ; Reason for Removal                                                                                   ;
++-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[2,4,5,11,17..19,21,22,26,28,29,32,36,40..42,45,46] ; Stuck at GND due to stuck port data_in                                                               ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[0..5,8,17..23,25,27,30..32,34,36..47]              ; Stuck at GND due to stuck port data_in                                                               ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_len_type[0..14]                                            ; Stuck at GND due to stuck port data_in                                                               ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_len_type[15]                                               ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[6]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[6]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[7]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[7]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[9]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[9]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[10] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[10]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[11] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[11]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[12] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[12]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[13] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[13]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[14] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[14]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[15] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[15]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[16] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[16]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[24] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[24]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[26] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[26]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[28] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[28]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[29] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[29]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[33] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[33]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[35] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_src_mac[35]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[0]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[0]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[1]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[1]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[3]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[3]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[6]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[6]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[7]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[7]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[8]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[8]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[9]  ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[9]                                                 ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[10] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[10]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[12] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[12]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[13] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[13]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[14] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[14]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[15] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[15]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[16] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[16]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[20] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[20]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[23] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[23]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[24] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[24]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[25] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[25]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[27] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[27]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[30] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[30]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[31] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[31]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[33] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[33]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[34] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[34]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[35] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[35]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[37] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[37]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[38] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[38]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[39] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[39]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[43] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[43]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[44] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[44]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_des_mac[47] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_crc_res[25]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_crc_res[29] ;
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_crc_res[24]                                                ; Merged with udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_crc_res[28] ;
+; Total Number of Removed Registers = 113                                                                                                 ;                                                                                                      ;
++-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 150   ;
-; Number of registers using Synchronous Clear  ; 17    ;
-; Number of registers using Synchronous Load   ; 24    ;
-; Number of registers using Asynchronous Clear ; 150   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 92    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|cnt[6]                           ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0|r_data_num[3] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |udp_proto_test|udp_protocol:udp_protocol_u0|cnt[4]                                                      ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|data_cnt[4]                      ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |udp_proto_test|udp_protocol:udp_protocol_u0|data_cnt[0]                                                 ;
+; 128:1              ; 4 bits    ; 340 LEs       ; 96 LEs               ; 244 LEs                ; Yes        ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|mac_data[0]                      ;
+; 128:1              ; 4 bits    ; 340 LEs       ; 32 LEs               ; 308 LEs                ; Yes        ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_data[0]                                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1|Crc[24]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[27]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[3]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[7]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[19]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[15]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[23]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[11]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[18]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[14]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[22]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[10]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[2]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[6]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[26]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[25]  ; 3       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[31]  ; 4       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[1]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[5]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[13]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[17]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[21]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[9]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[16]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[12]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[20]  ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[8]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[0]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[4]   ; 2       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[24]  ; 3       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[30]  ; 4       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[29]  ; 3       ;
-; ip_protocol:ui|crc32_d4:crc_u1|Crc[28]  ; 5       ;
-; Total number of inverted registers = 32 ;         ;
-+-----------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ip_proto_test|ip_protocol:ui|eth_mac:u0|r_data_num[5] ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ip_proto_test|ip_protocol:ui|data_cnt[0]              ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ip_proto_test|ip_protocol:ui|cnt[5]                   ;
-; 128:1              ; 4 bits    ; 340 LEs       ; 96 LEs               ; 244 LEs                ; Yes        ; |ip_proto_test|ip_protocol:ui|mac_data[0]              ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ip_proto_test|ip_protocol:ui|crc32_d4:crc_u1|Crc[30]  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |ip_proto_test ;
-+----------------+----------------------------------+---------------------------+
-; Parameter Name ; Value                            ; Type                      ;
-+----------------+----------------------------------+---------------------------+
-; CRC            ; 10110001111010000101111101000000 ; Unsigned Binary           ;
-+----------------+----------------------------------+---------------------------+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |udp_proto_test ;
++----------------+----------------------------------+----------------------------+
+; Parameter Name ; Value                            ; Type                       ;
++----------------+----------------------------------+----------------------------+
+; CRC            ; 10110001111010000101111101000000 ; Unsigned Binary            ;
++----------------+----------------------------------+----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ip_protocol:ui|crc32_d4:crc_u1 ;
-+----------------+-------+----------------------------------------------------+
-; Parameter Name ; Value ; Type                                               ;
-+----------------+-------+----------------------------------------------------+
-; Tp             ; 1     ; Signed Integer                                     ;
-+----------------+-------+----------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1 ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Tp             ; 1     ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                                ;
++-------------------------+-------------------+---------+----------------------------------+
+; File                    ; Location          ; Library ; Checksum                         ;
++-------------------------+-------------------+---------+----------------------------------+
+; ../rtl/check_sum.v      ; Project Directory ; work    ; fbe50b6f60039b7451888a6320710a63 ;
+; ../rtl/crc32_d4.v       ; Project Directory ; work    ; 1c75c84cb13c119a64a943e638f81f41 ;
+; ../rtl/eth_mac.v        ; Project Directory ; work    ; d4425cfc35257ef168efa3f9fa2596c4 ;
+; ../rtl/ip_protocol.v    ; Project Directory ; work    ; eaa883d46a7da5144b2dbdeafdb0c9a3 ;
+; ../rtl/udp_proto_test.v ; Project Directory ; work    ; 096c94b81dd1c9469e8c34421b649820 ;
+; ../rtl/udp_protocol.v   ; Project Directory ; work    ; 5dad590b1434efecdc96b75d589b5bb2 ;
++-------------------------+-------------------+---------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                                         ;
++-------------------------------------------------+----------------------------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                                                ; Type           ;
++-------------------------------------------------+----------------------------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                                        ; String         ;
+; sld_node_info                                   ; 805334528                                                            ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                                                    ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                                    ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                                    ; Signed Integer ;
+; sld_data_bits                                   ; 5                                                                    ; Untyped        ;
+; sld_trigger_bits                                ; 5                                                                    ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                                                   ; Signed Integer ;
+; sld_node_crc_hiword                             ; 1365                                                                 ; Untyped        ;
+; sld_node_crc_loword                             ; 56093                                                                ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                                                                    ; Signed Integer ;
+; sld_sample_depth                                ; 256                                                                  ; Untyped        ;
+; sld_segment_size                                ; 256                                                                  ; Untyped        ;
+; SLD_RAM_BLOCK_TYPE                              ; AUTO                                                                 ; String         ;
+; sld_state_bits                                  ; 11                                                                   ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                                                    ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                                    ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                                    ; Signed Integer ;
+; sld_trigger_level                               ; 1                                                                    ; Untyped        ;
+; sld_trigger_in_enabled                          ; 1                                                                    ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                                    ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                                    ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                                    ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                                    ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                                             ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                                    ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                                                    ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                                                 ; String         ;
+; sld_inversion_mask_length                       ; 68                                                                   ; Untyped        ;
+; sld_inversion_mask                              ; 00000000000000000000000000000000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                                    ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                                            ; String         ;
+; sld_state_flow_use_generated                    ; 0                                                                    ; Untyped        ;
+; sld_current_resource_width                      ; 1                                                                    ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                                                  ; Untyped        ;
+; sld_storage_qualifier_bits                      ; 5                                                                    ; Untyped        ;
+; sld_storage_qualifier_gap_record                ; 1                                                                    ; Untyped        ;
+; sld_storage_qualifier_mode                      ; START_STOP                                                           ; Untyped        ;
+; sld_storage_qualifier_enable_advanced_condition ; 0                                                                    ; Untyped        ;
+; sld_storage_qualifier_inversion_mask_length     ; 31                                                                   ; Untyped        ;
+; sld_storage_qualifier_advanced_condition_entity ; basic,1,basic,1,                                                     ; Untyped        ;
+; sld_storage_qualifier_pipeline                  ; 1                                                                    ; Untyped        ;
++-------------------------------------------------+----------------------------------------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ip_protocol:ui|check_sum:cksum_u7"                                                                                                                                                            ;
+; Port Connectivity Checks: "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|check_sum:cksum_u7"                                                                                                                   ;
 +-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port            ; Type  ; Severity ; Details                                                                                                                                                                             ;
 +-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -449,7 +517,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ip_protocol:ui|eth_mac:u0"                                                                                                                                                                    ;
+; Port Connectivity Checks: "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0"                                                                                                                   ;
 +-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port            ; Type   ; Severity ; Details                                                                                                                                                                            ;
 +-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -499,36 +567,70 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------+
-; Port Connectivity Checks: "ip_protocol:ui|crc32_d4:crc_u1" ;
-+----------+--------+----------+-----------------------------+
-; Port     ; Type   ; Severity ; Details                     ;
-+----------+--------+----------+-----------------------------+
-; Crc      ; Output ; Info     ; Explicitly unconnected      ;
-; CrcError ; Output ; Info     ; Explicitly unconnected      ;
-+----------+--------+----------+-----------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1" ;
++----------+--------+----------+----------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                              ;
++----------+--------+----------+----------------------------------------------------------------------+
+; Crc      ; Output ; Info     ; Explicitly unconnected                                               ;
+; CrcError ; Output ; Info     ; Explicitly unconnected                                               ;
++----------+--------+----------+----------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ip_protocol:ui"                                                                                                                                            ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                                                                                         ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; data_len[4..2]  ; Input  ; Info     ; Stuck at VCC                                                                                                                                    ;
-; data_len[11..5] ; Input  ; Info     ; Stuck at GND                                                                                                                                    ;
-; data_len[1..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                    ;
-; fifo_ck         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
-; fifo_da         ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "fifo_da[4..4]" will be connected to GND. ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3"                                                                                                                               ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_len ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (12 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; fifo_ck  ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
+; fifo_da  ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "fifo_da[4..4]" will be connected to GND.                                    ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "udp_protocol:udp_protocol_u0"                                                                    ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_len[15..5]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_len[1..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_len[4]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; data_len[3]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_len[2]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; fifo_ck           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; sour_port[12..7]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sour_port[4..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sour_port[15..13] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sour_port[6..5]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sour_port[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sour_port[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dest_port[12..7]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dest_port[4..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dest_port[15..13] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dest_port[6..5]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dest_port[2..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; udp_ck_sum        ; Input  ; Info     ; Stuck at GND                                                                        ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                                                    ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 5                   ; 5                ; 256          ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:00:02     ;
+; sld_hub:auto_hub ; 00:00:02     ;
++------------------+--------------+
 
 
 +-------------------------------+
@@ -537,7 +639,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Sat Feb 23 10:35:24 2019
+    Info: Processing started: Sat Feb 23 17:25:44 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off eth -c eth
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/ip_proto_test.v
@@ -562,46 +664,106 @@ Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_w
     Info (12023): Found entity 1: ip_protocol_tb
 Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/tb/ip_proto_test_tb.v
     Info (12023): Found entity 1: ip_proto_test_tb
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/udp_protocol.v
+    Info (12023): Found entity 1: udp_protocol
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/udp_proto_test.v
+    Info (12023): Found entity 1: udp_proto_test
+Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/tb/udp_proto_test_tb.v
+    Info (12023): Found entity 1: udp_proto_test_tb
 Warning (10236): Verilog HDL Implicit Net warning at ip_proto_test.v(50): created implicit net for "tx_go"
 Warning (10236): Verilog HDL Implicit Net warning at eth.v(64): created implicit net for "tx_go"
-Info (12127): Elaborating entity "ip_proto_test" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at ip_proto_test.v(36): object "crc_result" assigned a value but never read
-Info (12128): Elaborating entity "ip_protocol" for hierarchy "ip_protocol:ui"
+Warning (10236): Verilog HDL Implicit Net warning at udp_proto_test.v(49): created implicit net for "tx_go"
+Info (12127): Elaborating entity "udp_proto_test" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at udp_proto_test.v(34): object "crc_result" assigned a value but never read
+Info (12128): Elaborating entity "udp_protocol" for hierarchy "udp_protocol:udp_protocol_u0"
+Warning (10036): Verilog HDL or VHDL warning at udp_protocol.v(45): object "ip_totlen_byte" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at udp_protocol.v(49): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at udp_protocol.v(81): truncated value with size 16 to match size of target (12)
+Info (12128): Elaborating entity "ip_protocol" for hierarchy "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3"
 Warning (10230): Verilog HDL assignment warning at ip_protocol.v(45): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at ip_protocol.v(49): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at ip_protocol.v(171): truncated value with size 5 to match size of target (4)
-Info (12128): Elaborating entity "crc32_d4" for hierarchy "ip_protocol:ui|crc32_d4:crc_u1"
-Info (12128): Elaborating entity "eth_mac" for hierarchy "ip_protocol:ui|eth_mac:u0"
+Info (12128): Elaborating entity "crc32_d4" for hierarchy "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1"
+Info (12128): Elaborating entity "eth_mac" for hierarchy "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0"
 Warning (10036): Verilog HDL or VHDL warning at eth_mac.v(43): object "r_data_len" assigned a value but never read
 Warning (10034): Output port "mii_tx_er" at eth_mac.v(38) has no driver
-Info (12128): Elaborating entity "check_sum" for hierarchy "ip_protocol:ui|check_sum:cksum_u7"
+Info (12128): Elaborating entity "check_sum" for hierarchy "udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|check_sum:cksum_u7"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_er14.tdf
+    Info (12023): Found entity 1: altsyncram_er14
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_usc.tdf
+    Info (12023): Found entity 1: mux_usc
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dvf.tdf
+    Info (12023): Found entity 1: decode_dvf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_tei.tdf
+    Info (12023): Found entity 1: cntr_tei
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_pgc.tdf
+    Info (12023): Found entity 1: cmpr_pgc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_l6j.tdf
+    Info (12023): Found entity 1: cntr_l6j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_hgi.tdf
+    Info (12023): Found entity 1: cntr_hgi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_rgc.tdf
+    Info (12023): Found entity 1: cmpr_rgc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_23j.tdf
+    Info (12023): Found entity 1: cntr_23j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ngc.tdf
+    Info (12023): Found entity 1: cmpr_ngc
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
+Info (12206): 2 design partitions require synthesis
+    Info (12211): Partition "Top" requires synthesis because there were changes to its dependent source files
+    Info (12217): Partition "sld_hub:auto_hub" requires synthesis because there were changes made to the parameters on the partition's root instance
+Info (12207): 1 design partition does not require synthesis
+    Info (12229): Partition "sld_signaltap:auto_signaltap_0" does not require synthesis because there were no relevant design changes
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (281037): Using 6 processors to synthesize 2 partitions in parallel
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Sat Feb 23 17:25:48 2019
+Info: Command: quartus_map --parallel=1 --helper=0 --partition=Top eth -c eth
+Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "mii_tx_er" is stuck at GND
     Warning (13410): Pin "phy_rst_n" is stuck at VCC
-Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "mii_rx_clk"
-    Warning (15610): No output dependent on input pin "mii_rx_dv"
-    Warning (15610): No output dependent on input pin "mii_rx_er"
-    Warning (15610): No output dependent on input pin "mii_rx_da[0]"
-    Warning (15610): No output dependent on input pin "mii_rx_da[1]"
-    Warning (15610): No output dependent on input pin "mii_rx_da[2]"
-    Warning (15610): No output dependent on input pin "mii_rx_da[3]"
-Info (21057): Implemented 313 device resources after synthesis - the final resource count might be different
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (21057): Implemented 374 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 297 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 20 warnings
-    Info: Peak virtual memory: 4640 megabytes
-    Info: Processing ended: Sat Feb 23 10:35:26 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21061): Implemented 358 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4601 megabytes
+    Info: Processing ended: Sat Feb 23 17:25:49 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:03
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Sat Feb 23 17:25:48 2019
+Info: Command: quartus_map --parallel=1 --helper=2 --partition=sld_hub:auto_hub eth -c eth
+Info (281019): Starting Logic Optimization and Technology Mapping for Partition sld_hub:auto_hub
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
+Info (21057): Implemented 200 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 37 output pins
+    Info (21061): Implemented 144 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4601 megabytes
+    Info: Processing ended: Sat Feb 23 17:25:49 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:03
+Info (281038): Finished parallel synthesis of all partitions
+Info (144001): Generated suppressed messages file L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4697 megabytes
+    Info: Processing ended: Sat Feb 23 17:25:50 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+

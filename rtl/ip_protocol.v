@@ -103,7 +103,7 @@ module ip_protocol(
 	if(!rst_n)
 		cnt <= 7'd0;
 	else if(mac_rq)begin
-		if(cnt > 7'd39 && data_len > 12'd1)
+		if(cnt > 7'd39 && data_cnt > 12'd0)
 			cnt <= cnt;
 		else
 			cnt <= cnt + 1'b1;

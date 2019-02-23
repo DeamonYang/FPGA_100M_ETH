@@ -48,7 +48,7 @@ module ip_proto_test(
 	ip_protocol ui(
 		.rst_n		(rst_n),
 		.tx_go		(tx_go)	,
-		.data_len	 (12'd28)	,
+		.data_len	 (12'd29)	,
 		
 		.fifo_rq		(fifo_rq		),
 		.fifo_ck		(fifo_ck		),

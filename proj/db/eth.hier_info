@@ -1,12 +1,12 @@
-|ip_proto_test
+|udp_proto_test
 rst_n => rst_n.IN1
 mii_tx_clk => mii_tx_clk.IN1
-mii_tx_en <= ip_protocol:ui.mii_tx_en
-mii_tx_er <= ip_protocol:ui.mii_tx_er
-mii_tx_da[0] <= ip_protocol:ui.mii_tx_da
-mii_tx_da[1] <= ip_protocol:ui.mii_tx_da
-mii_tx_da[2] <= ip_protocol:ui.mii_tx_da
-mii_tx_da[3] <= ip_protocol:ui.mii_tx_da
+mii_tx_en <= udp_protocol:udp_protocol_u0.mii_tx_en
+mii_tx_er <= udp_protocol:udp_protocol_u0.mii_tx_er
+mii_tx_da[0] <= udp_protocol:udp_protocol_u0.mii_tx_da
+mii_tx_da[1] <= udp_protocol:udp_protocol_u0.mii_tx_da
+mii_tx_da[2] <= udp_protocol:udp_protocol_u0.mii_tx_da
+mii_tx_da[3] <= udp_protocol:udp_protocol_u0.mii_tx_da
 mii_rx_clk => ~NO_FANOUT~
 mii_rx_dv => ~NO_FANOUT~
 mii_rx_er => ~NO_FANOUT~
@@ -17,7 +17,97 @@ mii_rx_da[3] => ~NO_FANOUT~
 phy_rst_n <= <VCC>
 
 
-|ip_proto_test|ip_protocol:ui
+|udp_proto_test|udp_protocol:udp_protocol_u0
+rst_n => rst_n.IN1
+tx_go => tx_go.IN1
+data_len[0] => tot_data_len_byte[0].IN1
+data_len[1] => tot_data_len_byte[1].IN1
+data_len[2] => tot_data_len_byte[2].IN1
+data_len[3] => Add0.IN26
+data_len[3] => data_cnt.DATAB
+data_len[4] => Add0.IN25
+data_len[4] => data_cnt.DATAB
+data_len[5] => Add0.IN24
+data_len[5] => data_cnt.DATAB
+data_len[6] => Add0.IN23
+data_len[6] => data_cnt.DATAB
+data_len[7] => Add0.IN22
+data_len[7] => data_cnt.DATAB
+data_len[8] => Add0.IN21
+data_len[8] => data_cnt.DATAB
+data_len[9] => Add0.IN20
+data_len[9] => data_cnt.DATAB
+data_len[10] => Add0.IN19
+data_len[10] => data_cnt.DATAB
+data_len[11] => Add0.IN18
+data_len[12] => Add0.IN17
+data_len[13] => Add0.IN16
+data_len[14] => Add0.IN15
+data_len[15] => Add0.IN14
+fifo_rq <= fifo_rq.DB_MAX_OUTPUT_PORT_TYPE
+fifo_ck <= mii_tx_clk.DB_MAX_OUTPUT_PORT_TYPE
+fifo_da[0] => Selector3.IN19
+fifo_da[1] => Selector2.IN19
+fifo_da[2] => Selector1.IN19
+fifo_da[3] => Selector0.IN19
+sour_port[0] => Selector3.IN23
+sour_port[1] => Selector2.IN23
+sour_port[2] => Selector1.IN23
+sour_port[3] => Selector0.IN23
+sour_port[4] => Selector3.IN22
+sour_port[5] => Selector2.IN22
+sour_port[6] => Selector1.IN22
+sour_port[7] => Selector0.IN22
+sour_port[8] => Selector3.IN21
+sour_port[9] => Selector2.IN21
+sour_port[10] => Selector1.IN21
+sour_port[11] => Selector0.IN21
+sour_port[12] => Selector3.IN20
+sour_port[13] => Selector2.IN20
+sour_port[14] => Selector1.IN20
+sour_port[15] => Selector0.IN20
+dest_port[0] => Selector3.IN27
+dest_port[1] => Selector2.IN27
+dest_port[2] => Selector1.IN27
+dest_port[3] => Selector0.IN27
+dest_port[4] => Selector3.IN26
+dest_port[5] => Selector2.IN26
+dest_port[6] => Selector1.IN26
+dest_port[7] => Selector0.IN26
+dest_port[8] => Selector3.IN25
+dest_port[9] => Selector2.IN25
+dest_port[10] => Selector1.IN25
+dest_port[11] => Selector0.IN25
+dest_port[12] => Selector3.IN24
+dest_port[13] => Selector2.IN24
+dest_port[14] => Selector1.IN24
+dest_port[15] => Selector0.IN24
+udp_ck_sum[0] => Selector3.IN31
+udp_ck_sum[1] => Selector2.IN31
+udp_ck_sum[2] => Selector1.IN31
+udp_ck_sum[3] => Selector0.IN31
+udp_ck_sum[4] => Selector3.IN30
+udp_ck_sum[5] => Selector2.IN30
+udp_ck_sum[6] => Selector1.IN30
+udp_ck_sum[7] => Selector0.IN30
+udp_ck_sum[8] => Selector3.IN29
+udp_ck_sum[9] => Selector2.IN29
+udp_ck_sum[10] => Selector1.IN29
+udp_ck_sum[11] => Selector0.IN29
+udp_ck_sum[12] => Selector3.IN28
+udp_ck_sum[13] => Selector2.IN28
+udp_ck_sum[14] => Selector1.IN28
+udp_ck_sum[15] => Selector0.IN28
+mii_tx_clk => mii_tx_clk.IN1
+mii_tx_en <= ip_protocol:ip_protocol_u3.mii_tx_en
+mii_tx_er <= ip_protocol:ip_protocol_u3.mii_tx_er
+mii_tx_da[0] <= ip_protocol:ip_protocol_u3.mii_tx_da
+mii_tx_da[1] <= ip_protocol:ip_protocol_u3.mii_tx_da
+mii_tx_da[2] <= ip_protocol:ip_protocol_u3.mii_tx_da
+mii_tx_da[3] <= ip_protocol:ip_protocol_u3.mii_tx_da
+
+
+|udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3
 rst_n => rst_n.IN2
 tx_go => tx_go.IN1
 data_len[0] => ip_totlen_byte[0].IN2
@@ -25,59 +115,49 @@ data_len[1] => ip_totlen_byte[1].IN2
 data_len[2] => Add0.IN20
 data_len[2] => Add1.IN20
 data_len[2] => data_cnt.DATAB
-data_len[2] => LessThan3.IN22
 data_len[3] => Add0.IN19
 data_len[3] => Add1.IN19
 data_len[3] => data_cnt.DATAB
-data_len[3] => LessThan3.IN21
 data_len[4] => Add0.IN18
 data_len[4] => Add1.IN18
 data_len[4] => data_cnt.DATAB
-data_len[4] => LessThan3.IN20
 data_len[5] => Add0.IN17
 data_len[5] => Add1.IN17
 data_len[5] => data_cnt.DATAB
-data_len[5] => LessThan3.IN19
 data_len[6] => Add0.IN16
 data_len[6] => Add1.IN16
 data_len[6] => data_cnt.DATAB
-data_len[6] => LessThan3.IN18
 data_len[7] => Add0.IN15
 data_len[7] => Add1.IN15
 data_len[7] => data_cnt.DATAB
-data_len[7] => LessThan3.IN17
 data_len[8] => Add0.IN14
 data_len[8] => Add1.IN14
 data_len[8] => data_cnt.DATAB
-data_len[8] => LessThan3.IN16
 data_len[9] => Add0.IN13
 data_len[9] => Add1.IN13
 data_len[9] => data_cnt.DATAB
-data_len[9] => LessThan3.IN15
 data_len[10] => Add0.IN12
 data_len[10] => Add1.IN12
 data_len[10] => data_cnt.DATAB
-data_len[10] => LessThan3.IN14
 data_len[11] => Add0.IN11
 data_len[11] => Add1.IN11
-data_len[11] => LessThan3.IN13
 fifo_rq <= fifo_rq.DB_MAX_OUTPUT_PORT_TYPE
 fifo_ck <= mii_tx_clk.DB_MAX_OUTPUT_PORT_TYPE
-fifo_da[0] => Mux3.IN104
-fifo_da[1] => Mux2.IN104
+fifo_da[0] => Mux3.IN103
+fifo_da[1] => Mux2.IN103
 fifo_da[2] => Mux1.IN103
 fifo_da[3] => Mux0.IN103
 fifo_da[4] => ~NO_FANOUT~
 mii_tx_clk => mii_tx_clk.IN2
-mii_tx_en <= eth_mac:u0.mii_tx_en
-mii_tx_er <= eth_mac:u0.mii_tx_er
+mii_tx_en <= eth_mac:eth_mac_u0.mii_tx_en
+mii_tx_er <= eth_mac:eth_mac_u0.mii_tx_er
 mii_tx_da[0] <= mii_tx_da[0].DB_MAX_OUTPUT_PORT_TYPE
 mii_tx_da[1] <= mii_tx_da[1].DB_MAX_OUTPUT_PORT_TYPE
 mii_tx_da[2] <= mii_tx_da[2].DB_MAX_OUTPUT_PORT_TYPE
 mii_tx_da[3] <= mii_tx_da[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ip_proto_test|ip_protocol:ui|crc32_d4:crc_u1
+|udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1
 Clk => Crc[0]~reg0.CLK
 Clk => Crc[1]~reg0.CLK
 Clk => Crc[2]~reg0.CLK
@@ -306,7 +386,7 @@ Crc_eth[30] <= CrcNext[29].DB_MAX_OUTPUT_PORT_TYPE
 Crc_eth[31] <= CrcNext[28].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ip_proto_test|ip_protocol:ui|eth_mac:u0
+|udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0
 rst_n => r_len_type[0].ACLR
 rst_n => r_len_type[1].ACLR
 rst_n => r_len_type[2].ACLR
@@ -942,7 +1022,7 @@ mii_tx_da[2] <= mii_tx_da[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mii_tx_da[3] <= mii_tx_da[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ip_proto_test|ip_protocol:ui|check_sum:cksum_u7
+|udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|check_sum:cksum_u7
 ver[0] => Add0.IN4
 ver[1] => Add0.IN3
 ver[2] => Add0.IN2
