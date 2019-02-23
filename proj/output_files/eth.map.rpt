@@ -1,5 +1,5 @@
 Analysis & Synthesis report for eth
-Sat Feb 23 17:25:50 2019
+Sat Feb 23 17:32:59 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -54,7 +54,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Feb 23 17:25:50 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Feb 23 17:32:59 2019       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; eth                                         ;
 ; Top-level Entity Name              ; udp_proto_test                              ;
@@ -166,12 +166,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.60        ;
+; Average used               ; 1.50        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  60.0%      ;
+;     Processor 2            ;  50.0%      ;
 ;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -251,14 +251,13 @@ applicable agreement for further details.
 +--------------------------------+-------------+-------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Dependent File Changes for Partition Top                                                                                                                                                                ;
-+----------------------------------------------------------------------------+-----------------------+-------------------+----------+----------------------------------+----------------------------------+
-; Hierarchy                                                                  ; File Name             ; Relative Location ; Change   ; Old                              ; New                              ;
-+----------------------------------------------------------------------------+-----------------------+-------------------+----------+----------------------------------+----------------------------------+
-; udp_protocol:udp_protocol_u0                                               ; ../rtl/udp_protocol.v ; Project Directory ; Checksum ; 985e89975829a47f55c52d517b409c56 ; 5dad590b1434efecdc96b75d589b5bb2 ;
-; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0 ; ../rtl/eth_mac.v      ; Project Directory ; Checksum ; 07fd00f532ffb6970bf092a65142c3c4 ; d4425cfc35257ef168efa3f9fa2596c4 ;
-+----------------------------------------------------------------------------+-----------------------+-------------------+----------+----------------------------------+----------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Dependent File Changes for Partition Top                                                                                                                                                           ;
++----------------------------------------------------------------------------+------------------+-------------------+----------+----------------------------------+----------------------------------+
+; Hierarchy                                                                  ; File Name        ; Relative Location ; Change   ; Old                              ; New                              ;
++----------------------------------------------------------------------------+------------------+-------------------+----------+----------------------------------+----------------------------------+
+; udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0 ; ../rtl/eth_mac.v ; Project Directory ; Checksum ; d4425cfc35257ef168efa3f9fa2596c4 ; c4260be65866610b64ccaba3a49bfa33 ;
++----------------------------------------------------------------------------+------------------+-------------------+----------+----------------------------------+----------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -266,11 +265,11 @@ applicable agreement for further details.
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+--------------+
-; |udp_proto_test                    ; 330 (103)         ; 173 (39)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test                                                                            ; work         ;
-;    |udp_protocol:udp_protocol_u0|  ; 227 (40)          ; 134 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0                                               ; work         ;
-;       |ip_protocol:ip_protocol_u3| ; 187 (53)          ; 111 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3                    ; work         ;
+; |udp_proto_test                    ; 330 (102)         ; 173 (39)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test                                                                            ; work         ;
+;    |udp_protocol:udp_protocol_u0|  ; 228 (40)          ; 134 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0                                               ; work         ;
+;       |ip_protocol:ip_protocol_u3| ; 188 (53)          ; 111 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3                    ; work         ;
 ;          |crc32_d4:crc_u1|         ; 47 (47)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|crc32_d4:crc_u1    ; work         ;
-;          |eth_mac:eth_mac_u0|      ; 87 (87)           ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0 ; work         ;
+;          |eth_mac:eth_mac_u0|      ; 88 (88)           ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |udp_proto_test|udp_protocol:udp_protocol_u0|ip_protocol:ip_protocol_u3|eth_mac:eth_mac_u0 ; work         ;
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -377,7 +376,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+-------------------+---------+----------------------------------+
 ; ../rtl/check_sum.v      ; Project Directory ; work    ; fbe50b6f60039b7451888a6320710a63 ;
 ; ../rtl/crc32_d4.v       ; Project Directory ; work    ; 1c75c84cb13c119a64a943e638f81f41 ;
-; ../rtl/eth_mac.v        ; Project Directory ; work    ; d4425cfc35257ef168efa3f9fa2596c4 ;
+; ../rtl/eth_mac.v        ; Project Directory ; work    ; c4260be65866610b64ccaba3a49bfa33 ;
 ; ../rtl/ip_protocol.v    ; Project Directory ; work    ; eaa883d46a7da5144b2dbdeafdb0c9a3 ;
 ; ../rtl/udp_proto_test.v ; Project Directory ; work    ; 096c94b81dd1c9469e8c34421b649820 ;
 ; ../rtl/udp_protocol.v   ; Project Directory ; work    ; 5dad590b1434efecdc96b75d589b5bb2 ;
@@ -639,7 +638,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Sat Feb 23 17:25:44 2019
+    Info: Processing started: Sat Feb 23 17:32:53 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off eth -c eth
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file /fpwg_work/fpga_100eth/rtl/ip_proto_test.v
@@ -719,7 +718,7 @@ Info (281037): Using 6 processors to synthesize 2 partitions in parallel
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Sat Feb 23 17:25:48 2019
+    Info: Processing started: Sat Feb 23 17:32:57 2019
 Info: Command: quartus_map --parallel=1 --helper=0 --partition=Top eth -c eth
 Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
 Info (13000): Registers with preset signals will power-up high
@@ -734,13 +733,13 @@ Info (21057): Implemented 374 device resources after synthesis - the final resou
     Info (21061): Implemented 358 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 4601 megabytes
-    Info: Processing ended: Sat Feb 23 17:25:49 2019
+    Info: Processing ended: Sat Feb 23 17:32:58 2019
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:03
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Sat Feb 23 17:25:48 2019
+    Info: Processing started: Sat Feb 23 17:32:57 2019
 Info: Command: quartus_map --parallel=1 --helper=2 --partition=sld_hub:auto_hub eth -c eth
 Info (281019): Starting Logic Optimization and Technology Mapping for Partition sld_hub:auto_hub
 Info (13000): Registers with preset signals will power-up high
@@ -754,16 +753,16 @@ Info (21057): Implemented 200 device resources after synthesis - the final resou
     Info (21061): Implemented 144 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4601 megabytes
-    Info: Processing ended: Sat Feb 23 17:25:49 2019
+    Info: Processing ended: Sat Feb 23 17:32:58 2019
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 Info (281038): Finished parallel synthesis of all partitions
 Info (144001): Generated suppressed messages file L:/FPWG_WORK/FPGA_100ETH/proj/output_files/eth.map.smsg
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 18 warnings
     Info: Peak virtual memory: 4697 megabytes
-    Info: Processing ended: Sat Feb 23 17:25:50 2019
+    Info: Processing ended: Sat Feb 23 17:32:59 2019
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+

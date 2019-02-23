@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sat Feb 23 17:25:58 2019
+Fitter Status : Successful - Sat Feb 23 17:33:07 2019
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
 Revision Name : eth
 Top-level Entity Name : udp_proto_test
 Family : Cyclone IV E
 Device : EP4CE10F17C8
 Timing Models : Final
-Total logic elements : 899 / 10,320 ( 9 % )
+Total logic elements : 901 / 10,320 ( 9 % )
     Total combinational functions : 707 / 10,320 ( 7 % )
     Dedicated logic registers : 605 / 10,320 ( 6 % )
 Total registers : 605

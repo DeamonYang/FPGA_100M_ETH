@@ -903,3 +903,94 @@ vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L
 # 
 # Top level modules:
 # 	udp_protocol
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module check_sum
+# 
+# Top level modules:
+# 	check_sum
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L:/FPWG_WORK/FPGA_100ETH/rtl/crc32_d4.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module crc32_d4
+# 
+# Top level modules:
+# 	crc32_d4
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L:/FPWG_WORK/FPGA_100ETH/rtl/eth.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module eth
+# 
+# Top level modules:
+# 	eth
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module eth_mac
+# 
+# Top level modules:
+# 	eth_mac
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L:/FPWG_WORK/FPGA_100ETH/rtl/ip_proto_test.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ip_proto_test
+# 
+# Top level modules:
+# 	ip_proto_test
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ip_protocol
+# 
+# Top level modules:
+# 	ip_protocol
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L:/FPWG_WORK/FPGA_100ETH/rtl/udp_proto_test.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module udp_proto_test
+# 
+# Top level modules:
+# 	udp_proto_test
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../tb -O0 L:/FPWG_WORK/FPGA_100ETH/tb/udp_proto_test_tb.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module udp_proto_test_tb
+# 
+# Top level modules:
+# 	udp_proto_test_tb
+vlog -vlog01compat -work work +incdir+L:/FPWG_WORK/FPGA_100ETH/proj/../rtl -O0 L:/FPWG_WORK/FPGA_100ETH/rtl/udp_protocol.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module udp_protocol
+# 
+# Top level modules:
+# 	udp_protocol
+restart
+# Loading work.udp_proto_test_tb
+# Loading work.udp_proto_test
+# Loading work.udp_protocol
+# Loading work.ip_protocol
+# Loading work.crc32_d4
+# Loading work.eth_mac
+# Loading work.check_sum
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/udp_protocol.v(71): [PCDPC] - Port size (12 or 12) does not match connection size (16) for port 'data_len'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(4).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/udp_protocol.v(71): [PCDPC] - Port size (5 or 5) does not match connection size (4) for port 'fifo_da'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(8).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(90): [PCDPC] - Port size (12 or 12) does not match connection size (16) for port 'data_len'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/eth_mac.v(4).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3/eth_mac_u0
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(190): [PCDPC] - Port size (4 or 4) does not match connection size (32) for port 'ver'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v(2).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3/cksum_u7
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(190): [PCDPC] - Port size (4 or 4) does not match connection size (32) for port 'hdr_len'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v(3).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3/cksum_u7
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(190): [PCDPC] - Port size (8 or 8) does not match connection size (32) for port 'tos'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v(4).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3/cksum_u7
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(190): [PCDPC] - Port size (16 or 16) does not match connection size (32) for port 'offset'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v(7).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3/cksum_u7
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(190): [PCDPC] - Port size (8 or 8) does not match connection size (32) for port 'ttl'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v(8).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3/cksum_u7
+# ** Warning: (vsim-3015) L:/FPWG_WORK/FPGA_100ETH/rtl/ip_protocol.v(190): [PCDPC] - Port size (8 or 8) does not match connection size (32) for port 'protocol'. The port definition is at: L:/FPWG_WORK/FPGA_100ETH/rtl/check_sum.v(9).
+# 
+#         Region: /udp_proto_test_tb/udp_proto_test_ue8/udp_protocol_u0/ip_protocol_u3/cksum_u7
+run -all
+# Break in Module udp_proto_test_tb at L:/FPWG_WORK/FPGA_100ETH/tb/udp_proto_test_tb.v line 41

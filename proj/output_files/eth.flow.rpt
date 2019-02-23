@@ -1,5 +1,5 @@
 Flow report for eth
-Sat Feb 23 17:26:07 2019
+Sat Feb 23 17:33:15 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -40,14 +40,14 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Feb 23 17:26:07 2019       ;
+; Flow Status                        ; Successful - Sat Feb 23 17:33:15 2019       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; eth                                         ;
 ; Top-level Entity Name              ; udp_proto_test                              ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE10F17C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 899 / 10,320 ( 9 % )                        ;
+; Total logic elements               ; 901 / 10,320 ( 9 % )                        ;
 ;     Total combinational functions  ; 707 / 10,320 ( 7 % )                        ;
 ;     Dedicated logic registers      ; 605 / 10,320 ( 6 % )                        ;
 ; Total registers                    ; 605                                         ;
@@ -225,7 +225,13 @@ applicable agreement for further details.
 ; Assembler                 ; 00:00:01     ; 1.0                     ; 4572 MB             ; 00:00:01                           ;
 ; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4673 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4550 MB             ; 00:00:01                           ;
-; Total                     ; 00:04:06     ; --                      ; --                  ; 00:04:22                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.5                     ; 4697 MB             ; 00:00:06                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 4652 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 5490 MB             ; 00:00:07                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4576 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4685 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4550 MB             ; 00:00:01                           ;
+; Total                     ; 00:04:23     ; --                      ; --                  ; 00:04:40                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -324,6 +330,12 @@ applicable agreement for further details.
 ; Assembler                 ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
 ; EDA Netlist Writer        ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-L1VR7A3  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -360,6 +372,12 @@ quartus_asm --read_settings_files=off --write_settings_files=off eth -c eth
 quartus_sta eth -c eth
 quartus_eda --read_settings_files=off --write_settings_files=off eth -c eth
 quartus_map --read_settings_files=on --write_settings_files=off eth -c eth
+quartus_map --read_settings_files=on --write_settings_files=off eth -c eth
+quartus_cdb --read_settings_files=off --write_settings_files=off eth -c eth --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off eth -c eth
+quartus_asm --read_settings_files=off --write_settings_files=off eth -c eth
+quartus_sta eth -c eth
+quartus_eda --read_settings_files=off --write_settings_files=off eth -c eth
 quartus_map --read_settings_files=on --write_settings_files=off eth -c eth
 quartus_cdb --read_settings_files=off --write_settings_files=off eth -c eth --merge=on
 quartus_fit --read_settings_files=off --write_settings_files=off eth -c eth
